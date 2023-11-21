@@ -1,26 +1,20 @@
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
+import { ProductNew } from "_utils/types"
 
-interface Article {
-  id: number;
-  title: string;
-  author: string;
-  datePublished: string;
-  content: string;
-  imgSrc?: string;
-}
+
 
 interface RenderItemProps {
-  item: Article;
+  item: ProductNew;
 }
 
 export default function FeedItem({ item }: RenderItemProps) {
   return (
     <View className="bg-blue-200 divide-y divide-solid mb-4 px-2 py-3">
-      <Text className="text-blue-800">{item.id}.</Text>
+      <Text className="text-blue-800">{item.id}</Text>
       <Text>{item.title}</Text>
-      <Text>{item.author}</Text>
-      <Text>{item.datePublished}</Text>
-      <Text>{item.content}</Text>
+      <Text>{item.price}</Text>
+      <Text>{item.description}</Text>
+
     </View>
   );
 }

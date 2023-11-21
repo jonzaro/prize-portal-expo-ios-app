@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { StyledText as Text } from '_components/Text/StyledText';
-import { View,  Button, Pressable } from 'react-native';
+import { View, Button, Pressable, StyleSheet } from 'react-native';
 import { ControlledInput } from '_components/Input/ControlledInput';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -14,7 +14,7 @@ import { emailSchema } from '_utils/auth.schema';
 import analytics from '_utils/analytics/segment';
 import { deviceInfo } from '_config/device';
 import { Label } from '_components/Label/StyledLabel';
-import {Alert} from "_utils/alert";
+import { Alert } from '_utils/alert';
 
 const schema = z.object({
   email: emailSchema,
@@ -62,10 +62,9 @@ export default function SignIn() {
   }, [isFocused]);
 
   return (
+    <>
     <View className="flex-1 items-center p-4 gap-y-8">
-      <View>
-        <Text className="text-3xl mt-2 font-semibold">EXPO STARTER KIT</Text>
-      </View>
+      
       <View className="w-full bg-transparent">
         <Label htmlFor="email-sign-in" className="font-bold mb-2">
           {t('auth.email')}
@@ -89,20 +88,33 @@ export default function SignIn() {
           secureTextEntry
         />
       </View>
-      <View className="mt-4 bg-transparent w-full">
         <Button title={t('auth.sign-in')} onPress={onSubmit} />
-      </View>
-
-      <View>
+     
+      <Text>
         <Pressable onPress={() => setModalResetOpen(true)}>
           <Text>{t('auth.reset-password')}</Text>
         </Pressable>
-      </View>
 
       <ResetPasswordModal
         visible={modalResetOpen}
         close={() => setModalResetOpen(false)}
-      />
-    </View>
+        />
+     
+      </Text>
+      </View>
+      <View style={styles.bottomBanner}>
+
+      </View>
+      </>
   );
 }
+
+
+const styles = StyleSheet.create({
+
+  bottomBanner: {
+    backgroundColor: '#62d2a2',
+    height: 130,
+    width: 500,
+  },
+})

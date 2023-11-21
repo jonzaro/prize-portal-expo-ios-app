@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { StyledText as Text } from '_components/Text/StyledText';
-import { View, Button } from 'react-native';
+import { View, Button, StyleSheet } from 'react-native';
 import { ControlledInput } from '_components/Input/ControlledInput';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -71,10 +71,9 @@ export default function SignUp() {
   }, [isFocused]);
 
   return (
+    <>
     <View className="flex-1 items-center p-4 gap-y-8">
-      <View>
-        <Text className="text-3xl mt-2 font-semibold">EXPO STARTER KIT</Text>
-      </View>
+ 
       <View className="w-full bg-transparent">
         <Label htmlFor="email-sign-up" className="font-bold mb-2">
           {t('auth.email')}
@@ -112,6 +111,18 @@ export default function SignUp() {
       <View className="mt-4 bg-transparent w-full">
         <Button title={t('auth.sign-up')} onPress={onSubmit} />
       </View>
+
     </View>
+      <View className="justify-self-end" style={styles.bottomBanner}></View>
+      </>
   );
 }
+
+const styles = StyleSheet.create({
+
+  bottomBanner: {
+    backgroundColor: '#62d2a2',
+    height: 60,
+    width: 500,
+  },
+})

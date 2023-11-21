@@ -79,7 +79,7 @@ export function ResetPasswordModal({ visible, close }: ResetModalProps) {
           <StyledText className="font-bold text-lg">
             {t('auth.reset-password')}
           </StyledText>
-          <Pressable className="p-2" onPress={close}>
+          <Pressable className="p-2 text-teal-100" onPress={close}>
             <IonIcons
               name="close"
               color={colorScheme === 'dark' ? 'white' : 'black'}

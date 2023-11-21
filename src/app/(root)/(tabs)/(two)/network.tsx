@@ -6,7 +6,7 @@ import { ExternalLink } from '_components/Link/ExternalLink';
 export default function TabTwoScreen() {
   return (
     <SafeAreaView className="flex-1 items-center justify-center">
-      <Text className="text-lg font-bold">Tab Two</Text>
+      <Text className="text-lg font-bold">SILVER REWARDS</Text>
       <View className="my-8 h-1 w-4/5" />
 
       <ExternalLink
@@ -14,8 +14,7 @@ export default function TabTwoScreen() {
         href="https://github.com/ritmillio/expo-starter-kit"
       >
         <Text className="text-blue-500">
-          Check out the GitHub repo for this project! If you like it please make
-          sure to give me a
+          I AM TAB 2
           <Text className="text-2xl text-orange-300 font-bold"> STAR</Text>
         </Text>
       </ExternalLink>

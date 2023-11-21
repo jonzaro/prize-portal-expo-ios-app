@@ -7,6 +7,8 @@ type Credentials = {
 
 type User = Credentials & {
   nickname: string;
+  rewardsPoints: number;
+  rewardsTier: 'silver' | 'gold' | 'platinum';
 };
 
 type AuthError = {
@@ -53,7 +55,12 @@ export const useAuth = create<AuthState>((set, get) => ({
       };
     }
 
-    set({ users: [...get().users, newUser] });
+    set({
+      users: [
+        ...get().users,
+        { ...newUser, rewardsPoints: 5000, rewardsTier: 'gold' },
+      ],
+    });
   },
   logout() {
     set({ user: null });
