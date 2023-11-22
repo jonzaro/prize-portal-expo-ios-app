@@ -27,6 +27,16 @@ export default function Index() {
   analytics.trackScreen('Home');
 
   return (
+    <>
+    <Image
+      source={require('../../../assets/images/logoIcon.jpg')}
+      style={styles.imageLogo}
+    />
+    <View className="ml-10">
+      <Text className="text-lg bottom-7 left-8">
+      Welcome {user?.nickname}!
+      </Text>
+    </View>
     <SafeAreaView
       className={classNames({
         'flex flex-1 items-center justify-start': true,
@@ -34,14 +44,16 @@ export default function Index() {
         'bg-black': colorScheme === 'dark',
       })}
     >
-      
       <View style={[styles.card, styles.shadowProp]}>   
-      <Text className=" text-lg px-8 pr-5 ">
       <Image
-        source={require('../../../assets/images/logoIcon.jpg')}
-        style={styles.imageLogo}
-      />
-        Welcome {user?.nickname}, you have {user?.rewardsPoints} loyalty points.
+      source={require('../../../assets/images/loyaltyPointss.jpg')}
+      style={styles.imageEarn}
+      resizeMode="contain"
+    />
+
+
+      <Text className="text-sm px-8 ml-6">
+      You have {user?.rewardsPoints} loyalty points!
       </Text>
       </View>
 
@@ -146,6 +158,7 @@ export default function Index() {
     </View>
       <StatusBar style="auto" />
     </SafeAreaView>
+    </>
   );
 }
 
@@ -160,9 +173,17 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   imageLogo: {
-    width: 50, // Set the width as needed
-    height: 50, // Set the height as needed
+    width: 40, // Set the width as needed
+    height: 40, // Set the height as needed
     borderRadius: 5, // Optional: Add border-radius for rounded corners
+    marginLeft:20,
+  },
+  imageEarn: {
+    height: 120,
+   width: 200, // Set the width as needed
+    bottom: "2%",
+    left: "16%",
+        marginBottom: -20,
   },
   containerFlex: {
     flex: 3,
@@ -187,11 +208,12 @@ const styles = StyleSheet.create({
     borderColor: "#b5b5b5",
     borderWidth: 1,
     borderRadius: 8,
-    paddingVertical: 15,
-    paddingHorizontal: 25,
-    marginBottom: 20,
+    // paddingVertical: 5,
+    paddingHorizontal: 15,
+    marginBottom: -20,
     width: '90%',
-    height: '25%',
+    height: '30%',
+    bottom: "7%",
     marginVertical: 5,
     
   },
