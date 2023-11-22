@@ -1,5 +1,5 @@
 import { FlashList } from '@shopify/flash-list';
-import { View } from 'react-native';
+import { View , Text} from 'react-native';
 import { Link } from 'expo-router';
 import { ProductNew } from "_utils/types"
 import analytics from '_utils/analytics/segment';
@@ -24,6 +24,10 @@ export default function Feed() {
   });
 
   return (
+  <>
+      <Text>Congratulations, Gold Tier Royalty! Your membership shines brighter than a pot of gold, 
+        and as a token of our gratitude, we're letting you pick a gift that's as dazzling as your 
+        status.</Text>
     <FlashList
       data={mobileProducts}
       renderItem={({ item }: RenderItemProps) => (
@@ -45,9 +49,10 @@ export default function Feed() {
             <FeedItem item={item} />
           </View>
         // </Link>
-      )}
-      estimatedItemSize={200}
-
-    />
+        )}
+        estimatedItemSize={200}
+        
+        />
+        </>
   );
 }

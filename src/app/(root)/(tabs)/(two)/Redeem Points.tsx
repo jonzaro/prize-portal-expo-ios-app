@@ -6,7 +6,9 @@ import { ExternalLink } from '_components/Link/ExternalLink';
 export default function TabTwoScreen() {
   return (
     <SafeAreaView className="flex-1 items-center justify-center">
-      <Text className="text-lg font-bold">SILVER REWARDS</Text>
+      <Text>Your reward points are like magic currency that works 
+      wonders on any of our fantastic promotional items! Treat yourself and explore the endless
+       possibilities because you've earned it</Text>
       <View className="my-8 h-1 w-4/5" />
 
       <ExternalLink
