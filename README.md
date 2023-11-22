@@ -5,7 +5,6 @@
 ![Supports Expo Android](https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff)
 [![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
 
-expo-router-starter-kit is for building robust cross-platform apps blazingly fast! Currently we are focusing on building the best template to kick off your next mobile project.
 
 - Expo
 - [Expo Router](https://expo.github.io/router)
@@ -29,10 +28,6 @@ yarn install
 4. Run the project
 ```bash
 yarn ios
-```
-or 
-```bash
-yarn android
 ```
 
 ## ENVIRONMENT VARIABLES
@@ -73,16 +68,6 @@ Main screens:
 - Settings Screen
 - Top Navigation , Bottom Navigation, Native Modal
 
-
-<img src="https://zoltanfodor.b-cdn.net/expo-router-starter-kit/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202023-11-05%20at%2015.21.28.png" alt="Login screen with validation" width="400"/>
-
-<img src="https://zoltanfodor.b-cdn.net/expo-router-starter-kit/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202023-11-05%20at%2015.24.42.png" alt="Signup Screen" width="400"/>
-
-<img src="https://zoltanfodor.b-cdn.net/expo-router-starter-kit/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202023-11-05%20at%2015.22.02.png" alt="Signup Screen" width="400"/>
-
-<img src="https://zoltanfodor.b-cdn.net/expo-router-starter-kit/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202023-11-05%20at%2015.23.02.png" alt="Signup Screen" width="400"/>
-
-<img src="https://zoltanfodor.b-cdn.net/expo-router-starter-kit/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20Max%20-%202023-11-05%20at%2015.23.14.png" alt="Signup Screen" width="400"/>
 
 ## 🚧 Roadmap 🚧
 
