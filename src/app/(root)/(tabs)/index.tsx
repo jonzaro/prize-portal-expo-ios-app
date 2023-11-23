@@ -229,8 +229,6 @@ const styles = StyleSheet.create({
     marginVertical: 0,
     
   },
-
-  
   shadowProp: {
     shadowColor: '#171717',
     shadowOffset: {width: -2, height: 4},

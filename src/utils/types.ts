@@ -20,6 +20,18 @@
 //     name: string;
 //   }
 
+export interface ProductTypes {
+    key: number;
+    title: string;
+    description: string;
+    price: number;
+    wasPrice: number;
+    rating: number;
+    brand: string;
+    category: string;
+    thumbnail: string;
+    // images: ProductImages[];
+}
   
 export interface ProductNew {
   id: number;
