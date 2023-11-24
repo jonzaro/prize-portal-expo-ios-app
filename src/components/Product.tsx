@@ -28,11 +28,11 @@ const Product: React.FC<ProductProps> = ({
     <View style={styles.container}>
       <Image source={{ uri: image }} style={styles.image} />
       <Text style={styles.title}>{title}</Text>
+      <Text style={styles.brandCategory}>{brand} {category}</Text>
       <Text style={styles.description}>{description}</Text>
-      <Text style={styles.price}>${price.toFixed(2)}</Text>
-      {wasPrice && <Text style={styles.wasPrice}>Was ${wasPrice.toFixed(2)}</Text>}
+      <Text style={styles.price}>${price?.toFixed(2)}</Text>
+      {wasPrice && <Text style={styles.wasPrice}>Was ${wasPrice?.toFixed(2)}</Text>}
       <Text style={styles.rating}>Rating: {rating}</Text>
-      <Text style={styles.brandCategory}>{brand} - {category}</Text>
     </View>
     </View>
   );

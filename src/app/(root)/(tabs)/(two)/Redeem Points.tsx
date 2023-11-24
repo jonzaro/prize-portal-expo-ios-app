@@ -9,6 +9,9 @@ import type {ProductTypes} from '../../../../utils/types';
 import newData from '../../../../assets/data/newData.json';
 
 export default function TabTwoScreen() {
+
+  const expensiveItems = newData.filter(product => product.price > 100)
+
   return (
     <SafeAreaView className="flex-1 items-center justify-center">
       <View style={[styles.card, styles.shadowProp]}>   
@@ -18,10 +21,9 @@ export default function TabTwoScreen() {
        possibilities because you've earned it</Text>
        </View>
 
-      <View className="my-8 h-1 w-4/5" />
 
-        <ScrollView>
-      {newData.map((item, index) => (
+        <ScrollView horizontal={false}>
+      {expensiveItems.map((item, index) => (
         <Product
           key={index}
           title={item.title}
@@ -30,7 +32,6 @@ export default function TabTwoScreen() {
           wasPrice={item.wasPrice}
           rating={item.rating}
           brand={item.brand}
-          category={item.category} 
           image={item.image}         
         />
       ))}
