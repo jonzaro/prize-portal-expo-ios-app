@@ -46,30 +46,31 @@ export default function Feed() {
   ];
   
 
-
-    const images = [
-      require('../../../assets/images/doordash.png'),
-      require('../../../assets/images/Walmart.png'),
-      require('../../../assets/images/finishline.png'),
-      require('../../../assets/images/roku.png'),
-      require('../../../assets/images/twitch.png'),
-      require('../../../assets/images/ace.png'),
-    ];
-
+  const images = [
+    require('../../../assets/images/doordash.png'),
+    require('../../../assets/images/Walmart.png'),
+    require('../../../assets/images/finishline.png'),
+    require('../../../assets/images/roku.png'),
+    require('../../../assets/images/twitch.png'),
+    require('../../../assets/images/ace.png'),
+  ];
 
   return (
     <SafeAreaView style={styles.bg} className="flex-1 items-center ">
-      <ScrollView style={{height:1000}}>
+      <ScrollView style={{height:800}}>
+        <Image style={styles.topImg} source={require("../../../assets/images/Shopping-bro.png")}></Image>
+
         <View style={[styles.card, styles.shadowProp]}>   
-          <Text>Your perks don't end at thank you gifts, and points redemption. 
+          <Text className="text-xs">Your perks don't end at thank you gifts, and points redemption. 
             As a gold tier member, you also receive exclusive promotional deals from our family of brands.
           </Text>
         </View>
-    
+      
         {promoData.map((item, index) => (
-          <View style={styles.cardNew} className="justify-center">
-          <Image source={images} style={styles.imageEarn} resizeMode="contain"/>
-          <Text style={styles.title}>{item.promotionText}</Text>
+          <View           key={index}
+          style={styles.cardNew} className="justify-center">
+         <Image source={item.brandImage} style={styles.imageEarn} resizeMode="contain"/>
+         <Text style={styles.title}>{item.promotionText}</Text>
           <Text style={styles.description}>{item.promotionDescription}</Text>
         </View>
         ))}
@@ -80,12 +81,21 @@ export default function Feed() {
 
 
 const styles = StyleSheet.create({
+  topImg: {
+    position: 'absolute',
+    width: '40%',
+    height: '30%',
+    right: "4%",
+    // bottom: "65%",
+
+  },
   bg: {
     backgroundColor: '#62d2a2',
   },
   cardNew: {
     flex: 1, // Take up equal space in the row
     margin: 2,
+    top: "5%",
     padding: 6,
     width: '100%',
     height: '30%',
@@ -120,14 +130,15 @@ const styles = StyleSheet.create({
     borderColor: "#b5b5b5",
     borderWidth: 1,
     borderRadius: 8,
-    paddingVertical: 20,
+    paddingVertical: 10,
     paddingHorizontal: 20,
     marginLeft: '7%',
     // marginBottom: -20,
-    width: '80%',
-    // height: '30%',
-    // bottom: "7%",
-    marginVertical: 5,
+    width: '45%',
+    height: '20%',
+    top: "6%",
+    opacity: 0.8,
+    marginBottom: 35,
   },
   shadowProp: {
     shadowColor: '#171717',

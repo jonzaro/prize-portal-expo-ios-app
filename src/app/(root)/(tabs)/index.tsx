@@ -46,7 +46,7 @@ export default function Index() {
     >
       <View style={[styles.card, styles.shadowProp]}>   
       <Image
-      source={require('../../../assets/images/loyaltyPointss.jpg')}
+      source={require('../../../assets/images/Wallet-bro.png')}
       style={styles.imageEarn}
       resizeMode="contain"
     />
@@ -95,8 +95,9 @@ export default function Index() {
           )}
         />
       </View>
+              <Image source={require("../../../assets/images/bubble.jpeg")} style={styles.imageBubble}/>
       <View className="mt-5 p-5" style={[styles.card2, styles.shadowProp]}>   
-              <Text>
+              <Text className="text-xs">
         When you spend money at partner brands, you accrue points that can be 
         redeemed for discounts, items, or exclusive perks.
         </Text>
@@ -185,6 +186,15 @@ const styles = StyleSheet.create({
     left: "16%",
         marginBottom: -20,
   },
+  imageBubble: {
+    position: 'relative',
+    height: 120,
+    width: 350, // Set the width as needed
+    top: "25%",
+    right: "5%",
+    // marginBottom: -20,  
+  },
+  
   containerFlex: {
     flex: 3,
     justifyContent: 'center',
@@ -218,14 +228,14 @@ const styles = StyleSheet.create({
     
   },
   card2: {
-    backgroundColor: '#c2f2dd',
-    borderColor: "#b5b5b5",
-    borderWidth: 1,
-    borderRadius: 8,
+    // backgroundColor: '#c2f2dd',
+    // borderColor: "#b5b5b5",
     paddingVertical: 15,
     paddingHorizontal: 25,
-    width: '90%',
-    height: '18%',
+    width: '60%',
+    height: '35%',
+    bottom: "7%",
+    right: "3%",
     marginVertical: 0,
     
   },
