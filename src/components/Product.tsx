@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons'; 
 
 interface ProductProps {
   title: string;
@@ -22,18 +23,23 @@ const Product: React.FC<ProductProps> = ({
   category,
   image,
 }) => {
-  return (
-    <View style={[styles.card, styles.shadowProp]}>   
+
+
+    const textStyle = price < 100 ? styles.priceStrike : styles.price;
+    
+    return (
+        <View style={[styles.card, styles.shadowProp]}>   
 
     <View style={styles.container}>
       <Image source={{ uri: image }} style={styles.image} />
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.brandCategory}>{brand} {category}</Text>
-      <Text style={styles.description}>{description}</Text>
-      <Text style={styles.price}>${price?.toFixed(2)}</Text>
-      {wasPrice && <Text style={styles.wasPrice}>Was ${wasPrice?.toFixed(2)}</Text>}
-      <Text style={styles.rating}>Rating: {rating}</Text>
+      <Text style={styles.description} className="mt-5">{description}</Text>
+      {price < 100 ? <Text className="text-green-400 text-lg ml-20 top-9">FREE</Text> : null}
+      <Text style={textStyle}> ${price?.toFixed(2)}</Text>
+      <Text style={styles.rating}>Rating: &#9733; {rating}  |  <FontAwesome5 name="shipping-fast" size={14} color="black" />   Free shipping</Text>
     </View>
+
     </View>
   );
 };
@@ -92,10 +98,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     margin: 10,
   },
-  wasPrice: {
-    fontSize: 14,
-    color: 'gray',
-    marginLeft: 10,
+  priceStrike: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    margin: 10,
     textDecorationLine: 'line-through',
   },
   rating: {

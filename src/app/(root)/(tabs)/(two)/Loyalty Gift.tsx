@@ -4,6 +4,7 @@ import { Link } from 'expo-router';
 import { ProductNew } from "_utils/types"
 import analytics from '_utils/analytics/segment';
 
+
 import Product from '../../../../components/Product';
 
 
@@ -15,8 +16,6 @@ import newData from '../../../../assets/data/newData.json';
 //COMPONENTS
 import FeedItem from '_components/Feed/FeedItem';
 
-//TODO: issue with typescript causing crashes
-
 
 export default function Feed() {
   analytics.trackScreen('Feed');
@@ -25,27 +24,28 @@ export default function Feed() {
 
   return (
   <>
-    <SafeAreaView className="flex-1 items-center justify-center">
+    <SafeAreaView style={styles.bg} className="flex-1 items-center justify-center">
 
       <View style={[styles.card, styles.shadowProp]}>   
 
-      <Text>Congratulations on reaching Gold Tier in our loyalty program!
+      <Text>Congratulations on becoming a Gold Tier in our loyalty program!
          As a token of our gratitude, we're thrilled to send you a special
           gift valued at up to $100. Enjoy the exclusive perks of being a valued member!</Text>
         </View>
   
         <ScrollView horizontal={false}>
       {cheapItems.map((item, index) => (
+     
         <Product
           key={index}
           title={item.title}
           description={item.description}
           price={item.price}
-          wasPrice={item.wasPrice}
           rating={item.rating}
           brand={item.brand}
           image={item.image}         
         />
+   
       ))}
     </ScrollView>  
     </SafeAreaView>
@@ -54,6 +54,10 @@ export default function Feed() {
 }
 
 const styles = StyleSheet.create({
+  bg: {
+    backgroundColor: '#62d2a2',
+
+  },
   card: {
     backgroundColor: 'white',
     borderColor: "#b5b5b5",

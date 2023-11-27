@@ -20,7 +20,7 @@
 //     name: string;
 //   }
 
-export interface ProductTypes {
+export interface ProductType {
     key: number;
     title: string;
     description: string;

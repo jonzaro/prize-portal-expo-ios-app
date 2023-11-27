@@ -18,7 +18,7 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color }: any) => (
-            <TabBarIcon name="home" color={color} />
+            <TabBarIcon name="home" color="#2b5e48" />
           ),
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -40,28 +40,28 @@ export default function TabLayout() {
         name="(two)"
         options={{
           title: 'Rewards',
-          tabBarIcon: ({ color }) => <TabBarIcon name="money" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="money" color="#2b5e48" />,
         }}
       />
       <Tabs.Screen
         name="three"
         options={{
           title: 'Offers',
-          tabBarIcon: ({ color }) => <TabBarIcon name="bullseye" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="bullseye" color="#2b5e48" />,
         }}
       />
       <Tabs.Screen
         name="four"
         options={{
           title: 'FAQs',
-          tabBarIcon: ({ color }) => <TabBarIcon name="question" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="question" color="#2b5e48" />,
         }}
       />
       <Tabs.Screen
         name="settings"
         options={{
           title: 'Settings',
-          tabBarIcon: ({ color }) => <TabBarIcon name="cog" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="cog" color="#2b5e48" />,
         }}
       />
     </Tabs>
