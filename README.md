@@ -71,20 +71,5 @@ Main screens:
 
 ## 🚧 Roadmap 🚧
 
-This roadmap outlines the planned development and enhancement of the `expo-router` template project. Our primary goal is to create a comprehensive template covering essential Expo features, followed by the expansion into multiple templates and a CLI for tailored project initialization.
-
-#### 🚀 Phase 1: Comprehensive Template Development - currently IN PROGRESS
-1.  **Carousel and other components fix**  - Address and fix carousel related issues in the current template + create/fix multiple expo base components, utils, helper functions.
-2.  **Remove Nativewind**  - Replace Nativewind due to its discontinuation and performance issues. 
-3. **Authentication Integration**  - Explore and integrate authentication providers like Clark or other alternatives.
-4. **TanStack Query**  - Implement an example of Data Mutation.
-
-#### 🛠 Phase 2: Template Expansion and CLI Development
-- Expand the project to include a variety of templates catering to different use cases. (e-commerce , barebone, base, etc)
-- Develop a CLI to streamline the creation and management of projects based on these templates.
----
-## Contributors
-**Hey fellow developers! We are inviting developers who are enthusiastic about Expo and React Native to join us in this venture. Whether you are looking to contribute code, share ideas, or provide feedback, we welcome all forms of collaboration.** - Join to our Discord : https://discord.gg/ns6gassHaS
-
-We would like to thank the following people who've contributed to this project:
+I would like to thank the following people who've contributed to this project:
  [@kewinzaq1](https://github.com/kewinzaq1)
