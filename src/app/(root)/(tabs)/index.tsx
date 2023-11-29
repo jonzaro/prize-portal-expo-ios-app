@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View , Image, StyleSheet} from 'react-native';
+import { Text, View , Image, StyleSheet, ScrollView, Linking, TouchableOpacity} from 'react-native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { viewportWidth, spacing } from '_utils/viewport';
@@ -11,18 +11,24 @@ import { useTranslation } from 'react-i18next';
 
 //Components
 import { Carousel } from '_components/Carousel/Carousel';
-
+import { ExternalLinkImage } from "../../../components/ExternalLinkImage";
 //Data
 import homeData from '_assets/data/home.json';
 import { classNames } from '_utils/classNames';
 import { useColorScheme } from 'nativewind';
 import { useAuth } from 'src/store/authStore/auth.store';
+import { ExternalLink } from '_components/Link/ExternalLink';
 
 export default function Index() {
   const { t } = useTranslation();
   const { colorScheme } = useColorScheme();
 
   const user = useAuth((state) => state.user);
+
+
+  const handleApplePress = () => {
+    Linking.openURL("www.apple.com");
+  };
 
   analytics.trackScreen('Home');
 
@@ -49,7 +55,7 @@ export default function Index() {
       source={require('../../../assets/images/Wallet-bro.png')}
       style={styles.imageEarn}
       resizeMode="contain"
-    />
+      />
 
 
       <Text className="text-sm px-8 ml-6">
@@ -95,9 +101,10 @@ export default function Index() {
           )}
         />
       </View>
-              <Image source={require("../../../assets/images/bubble.jpeg")} style={styles.imageBubble}/>
-      <View className="mt-5 p-5" style={[styles.card2, styles.shadowProp]}>   
-              <Text className="text-xs">
+      <ScrollView style={{width: "100%", left: "5%"}}>
+      <View className="mt-5 p-5" style={styles.card2}>   
+      <Image source={require("../../../assets/images/bubble2.jpeg")} style={styles.imageBubble} resizeMode='contain' />
+              <Text style={styles.bubbleText}>
         When you spend money at partner brands, you accrue points that can be 
         redeemed for discounts, items, or exclusive perks.
         </Text>
@@ -105,58 +112,75 @@ export default function Index() {
       <View style={styles.containerFlex}>
 
       <View style={styles.row}>
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.apple.com')}>
+          <View style={styles.item}>
+            <Image 
+            source={require('../../../assets/images/Apple.png')}
+            style={styles.imageFlex}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+          </View>
+        </TouchableOpacity>
 
-        <View style={styles.item}>
-        <Image
-        source={require('../../../assets/images/Apple.png')}
-        style={styles.imageFlex}
-        resizeMode="contain" // Adjust the resizeMode as needed
-      />
-      </View>
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.target.com')}>
+          <View style={styles.item}>
+            <Image 
+            source={require('../../../assets/images/Target.png')}
+            style={styles.imageFlex}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+          </View>
+        </TouchableOpacity>
 
-        <View style={styles.item}>
-      <Image
-        source={require('../../../assets/images/Target.png')}
-        style={styles.imageFlex}
-        resizeMode="contain" // Adjust the resizeMode as needed
-      />
-      </View>
-
-        <View style={styles.item}>
-      <Image
-        source={require('../../../assets/images/BestBuy.png')}
-        style={styles.imageFlex}
-        resizeMode="contain" // Adjust the resizeMode as needed
-      />
-        </View>
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.bestbuy.com')}>
+          <View style={styles.item}>
+            <Image 
+            source={require('../../../assets/images/BestBuy.png')}
+            style={styles.imageFlex}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+          </View>
+        </TouchableOpacity>
 
       </View>
 
 
       <View style={styles.row}>
-        <View style={styles.item}>
-        <Image
-        source={require('../../../assets/images/Nike.png')}
-        style={styles.imageFlex}
-        resizeMode="contain" // Adjust the resizeMode as needed
-      />
-      </View>
-      <View style={styles.item}>
-        <Image
-        source={require('../../../assets/images/Walmart.png')}
-        style={styles.imageFlex}
-        resizeMode="contain" // Adjust the resizeMode as needed
-      />
-        </View>
-        <View style={styles.item}>
-        <Image
-        source={require('../../../assets/images/Macys.png')}
-        style={styles.imageFlex}
-        resizeMode="contain" // Adjust the resizeMode as needed
-      />
-        </View>
+      <TouchableOpacity onPress={() => Linking.openURL('https://www.nike.com')}>
+          <View style={styles.item}>
+            <Image 
+            source={require('../../../assets/images/Nike.png')}
+            style={styles.imageFlex}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.walmart.com')}>
+          <View style={styles.item}>
+            <Image 
+            source={require('../../../assets/images/Walmart.png')}
+            style={styles.imageFlex}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.macys.com')}>
+          <View style={styles.item}>
+            <Image 
+            source={require('../../../assets/images/Macys.png')}
+            style={styles.imageFlex}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
+    <TouchableOpacity onPress={() => Linking.openURL('https://storyset.com/business')}>
+  <Text style={{color: '#2b5e48', fontSize: 8}}>Business illustrations by Storyset</Text>
+</TouchableOpacity>
       <StatusBar style="auto" />
     </SafeAreaView>
     </>
@@ -187,19 +211,23 @@ const styles = StyleSheet.create({
         marginBottom: -20,
   },
   imageBubble: {
-    position: 'relative',
-    height: 120,
-    width: 350, // Set the width as needed
-    top: "25%",
-    right: "5%",
+    position: 'absolute',
+    height: "200%",
+    width: "200%", // Set the width as needed
+    top: "10%",
+    
     // marginBottom: -20,  
   },
-  
+  bubbleText: {
+    fontSize: 9,
+    top: "25%",
+    left: "45%",
+  },
   containerFlex: {
     flex: 3,
     justifyContent: 'center',
     flexDirection: 'column', // Flex direction is set to column for vertical arrangement
-    marginRight: 40,
+    // marginRight: 40,
   },
   row: {
     flex: 1,
@@ -234,7 +262,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     width: '60%',
     height: '35%',
-    bottom: "7%",
+    bottom: "1%",
     right: "3%",
     marginVertical: 0,
     

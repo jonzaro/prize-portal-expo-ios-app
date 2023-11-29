@@ -23,12 +23,26 @@ interface AuthState {
   logout: () => void;
   resetPassword: (email: string) => string | AuthError;
 }
+function getRandomWholeNumber() {
+  // Generate a random decimal between 0 (inclusive) and 1 (exclusive)
+  const randomDecimal = Math.random();
+
+  // Scale the random decimal to be less than 10000
+  const scaledNumber = randomDecimal * 10000;
+
+  // Round down to the nearest whole number
+  const wholeNumber = Math.floor(scaledNumber);
+
+  // Return the result
+  return wholeNumber;
+}
 
 export const useAuth = create<AuthState>((set, get) => ({
   user: null,
   users: [],
   login(credentials) {
     const user = get().users?.find((user) => user.email === credentials.email);
+
 
     if (!user) {
       return {
@@ -58,7 +72,7 @@ export const useAuth = create<AuthState>((set, get) => ({
     set({
       users: [
         ...get().users,
-        { ...newUser, rewardsPoints: 5000, rewardsTier: 'gold' },
+        { ...newUser, rewardsPoints: getRandomWholeNumber(), rewardsTier: 'gold' },
       ],
     });
   },

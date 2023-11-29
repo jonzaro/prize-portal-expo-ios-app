@@ -1,4 +1,4 @@
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { StyledText as Text } from '_components/Text/StyledText';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ExternalLink } from '_components/Link/ExternalLink';
@@ -50,6 +50,8 @@ export default function TabTwoScreen() {
 
         <ScrollView horizontal={false}>
       {expensiveItems.map((item, index) => (
+        <TouchableOpacity onPress={() => alert('Apply your points to this item?')}>
+
         <Product
           key={index}
           title={item.title}
@@ -60,6 +62,7 @@ export default function TabTwoScreen() {
           brand={item.brand}
           image={item.image} 
         />
+        </TouchableOpacity>
       ))}
     </ScrollView>    
       

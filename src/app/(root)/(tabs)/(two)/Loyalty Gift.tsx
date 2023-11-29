@@ -1,5 +1,5 @@
 import { FlashList } from '@shopify/flash-list';
-import { View , Text, FlatList, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
+import { View , Text, FlatList, ScrollView, SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
 import { Link } from 'expo-router';
 import { ProductNew } from "_utils/types"
 import analytics from '_utils/analytics/segment';
@@ -33,9 +33,11 @@ export default function Feed() {
           gift valued at up to $100. Enjoy the exclusive perks of being a valued member!</Text>
         </View>
   
-        <ScrollView horizontal={false}>
+        <ScrollView horizontal={false} style={{ width:"95%"}}>
       {cheapItems.map((item, index) => (
-     
+        //ADD LOGIC THAT ONLY ALLOWS AN ALERT AND A REDIRECT, IF THE USER HAS NO GIFT YET
+        //DISABLE IF USER => hasGift = true
+     <TouchableOpacity onPress={() => alert('Thanks for choosing your gift!')}>
         <Product
           key={index}
           title={item.title}
@@ -45,7 +47,7 @@ export default function Feed() {
           brand={item.brand}
           image={item.image}         
         />
-   
+   </TouchableOpacity>
       ))}
     </ScrollView>  
     </SafeAreaView>

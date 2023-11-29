@@ -1,4 +1,4 @@
-import { View, Image, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Image, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 import { Link } from 'expo-router';
 import analytics from '_utils/analytics/segment';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -67,12 +67,17 @@ export default function Feed() {
         </View>
       
         {promoData.map((item, index) => (
-          <View           key={index}
-          style={styles.cardNew} className="justify-center">
-         <Image source={item.brandImage} style={styles.imageEarn} resizeMode="contain"/>
-         <Text style={styles.title}>{item.promotionText}</Text>
-          <Text style={styles.description}>{item.promotionDescription}</Text>
-        </View>
+          <TouchableOpacity onPress={() => alert('Thanks for choosing your gift!')}>
+
+          <View           
+            key={index}
+            style={styles.cardNew} 
+            className="justify-center">
+            <Image source={item.brandImage} style={styles.imageEarn} resizeMode="contain"/>
+            <Text style={styles.title}>{item.promotionText}</Text>
+            <Text style={styles.description}>{item.promotionDescription}</Text>
+          </View>
+        </TouchableOpacity>
         ))}
       </ScrollView>
     </SafeAreaView>
@@ -138,7 +143,7 @@ const styles = StyleSheet.create({
     height: '20%',
     top: "6%",
     opacity: 0.8,
-    marginBottom: 35,
+    marginBottom: 60,
   },
   shadowProp: {
     shadowColor: '#171717',
