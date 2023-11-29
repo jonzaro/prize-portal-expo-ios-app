@@ -1,59 +1,55 @@
 import { View, Image, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import analytics from '_utils/analytics/segment';
 import { ScrollView } from 'react-native-gesture-handler';
+import type {ProductType, PromoCoupon} from "../../../utils/types";
+import { useUserProductStore } from 'src/store/userProduct.store';
+import { PromoCouponItem } from "../../../components/PromoCouponItem";
+
+
+
 export default function Feed() {
   analytics.trackScreen('Feed');
 
-  const promoData = [
+  const promoData: PromoCoupon[] = [
     {
-      brand: 'Brand A',
       promotionText: 'Get 20% off',
       promotionDescription: 'Exclusive discount on selected items',
       brandImage: require('../../../assets/images/finishline.png'),
-
     },
     {
-      brand: 'Brand B',
       promotionText: 'Buy one, get one free',
       promotionDescription: 'Limited-time offer on various products',
       brandImage: require('../../../assets/images/ace.png'),
     },
     {
-      brand: 'Brand C',
       promotionText: 'Flash Sale - 24 Hours Only',
       promotionDescription: 'Hurry up and grab your favorites at unbeatable prices',
       brandImage: require('../../../assets/images/roku.png'),
     },
     {
-      brand: 'Brand D',
       promotionText: 'Free Shipping on Orders over $50',
       promotionDescription: 'Enjoy complimentary shipping on qualifying purchases',
       brandImage: require('../../../assets/images/twitch.png'),
     },
     {
-      brand: 'Brand E',
       promotionText: 'Special Bundle Deals',
       promotionDescription: 'Save big with our curated product bundles',
       brandImage: require('../../../assets/images/doordash.png'),
     },
     {
-      brand: 'Brand F',
       promotionText: 'Reward Points Bonanza',
       promotionDescription: 'Earn double points on every purchase this month',
       brandImage: require('../../../assets/images/Walmart.png'),
     },
   ];
-  
+  const setPromoCoupon = useUserProductStore((store) => store.setPromoCoupon);
 
-  const images = [
-    require('../../../assets/images/doordash.png'),
-    require('../../../assets/images/Walmart.png'),
-    require('../../../assets/images/finishline.png'),
-    require('../../../assets/images/roku.png'),
-    require('../../../assets/images/twitch.png'),
-    require('../../../assets/images/ace.png'),
-  ];
+  const handlePress = (promoCoupon: PromoCoupon) => {
+    alert('Deal saved to profile')
+    setPromoCoupon(promoCoupon);
+    router.push('/profile')
+  }
 
   return (
     <SafeAreaView style={styles.bg} className="flex-1 items-center ">
@@ -67,16 +63,9 @@ export default function Feed() {
         </View>
       
         {promoData.map((item, index) => (
-          <TouchableOpacity onPress={() => alert('Thanks for choosing your gift!')}>
+          <TouchableOpacity onPress={() => handlePress(item)}>
 
-          <View           
-            key={index}
-            style={styles.cardNew} 
-            className="justify-center">
-            <Image source={item.brandImage} style={styles.imageEarn} resizeMode="contain"/>
-            <Text style={styles.title}>{item.promotionText}</Text>
-            <Text style={styles.description}>{item.promotionDescription}</Text>
-          </View>
+          <PromoCouponItem promoCoupon ={item}/>
         </TouchableOpacity>
         ))}
       </ScrollView>

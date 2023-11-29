@@ -19,15 +19,14 @@
 
 ## Installation
 
-1. Clone this template by clicking on Use this template -> Create new repository.
-2. Clone the new repository
-3. Install dependencies	
+1. Clone the new repository.
+2. Install dependencies.
 ```bash
 yarn install
 ```
 4. Run the project
 ```bash
-yarn ios
+yarn ios | yarn start  -> i (for ios)
 ```
 
 ## ENVIRONMENT VARIABLES

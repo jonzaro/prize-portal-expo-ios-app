@@ -8,13 +8,13 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 
 
-
 //DATA
 import newData from '../../../../assets/data/newData.json';
+import { useAuth } from 'src/store/authStore/auth.store';
 
-//NEED TO CREATE LOGIC MATH FUNC TO CONVERT POINTS INTO DOLLARS TO SUBTRACT FROM TOTAL
-const rewardsPoints = 4250;
-function calculateRewards(rewardsPoints) {
+
+
+function calculateRewards(rewardsPoints?: number) {
   // Ensure rewardsPoints is a number
   if (typeof rewardsPoints !== 'number') {
     throw new Error('Rewards points must be a number');
@@ -23,20 +23,21 @@ function calculateRewards(rewardsPoints) {
   const roundedValue = Math.round(rewardsPoints / 50);
   return roundedValue;
 }
-const result = calculateRewards(rewardsPoints);
 
 
 
-
-export default function TabTwoScreen() {
-
+export default function RedeemPoints() {
+  
+  
+  const user = useAuth((state) => state.user);
   const expensiveItems = newData.filter(product => product.price > 100)
+  const result = calculateRewards(user?.rewardsPoints);
 
   return (
     <SafeAreaView style={styles.bg} className="flex-1 items-center justify-center">
       <View style={[styles.card, styles.shadowProp]}>   
 
-      <Text className="text-sm"><FontAwesome5 name="coins" size={14} color="#2b5e48" />  You have {rewardsPoints} rewards points!  <FontAwesome5 name="coins" size={14} color="#2b5e48" /></Text>
+      <Text className="text-sm"><FontAwesome5 name="coins" size={14} color="#2b5e48" />  You have {user?.rewardsPoints} rewards points!  <FontAwesome5 name="coins" size={14} color="#2b5e48" /></Text>
       <Text className="text-sm">That's {result} rewards dollars!</Text>
       </View>
       
@@ -61,6 +62,9 @@ export default function TabTwoScreen() {
           rating={item.rating}
           brand={item.brand}
           image={item.image} 
+          category={item.category}
+
+
         />
         </TouchableOpacity>
       ))}

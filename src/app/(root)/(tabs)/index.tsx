@@ -11,7 +11,6 @@ import { useTranslation } from 'react-i18next';
 
 //Components
 import { Carousel } from '_components/Carousel/Carousel';
-import { ExternalLinkImage } from "../../../components/ExternalLinkImage";
 //Data
 import homeData from '_assets/data/home.json';
 import { classNames } from '_utils/classNames';

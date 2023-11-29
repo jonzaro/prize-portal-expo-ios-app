@@ -3,15 +3,17 @@ import { View , Image, Text, ScrollView, SafeAreaView, StyleSheet} from 'react-n
 import { Link } from 'expo-router';
 import analytics from '_utils/analytics/segment';
 import { useAuth } from 'src/store/authStore/auth.store';
+import { useUserProductStore } from 'src/store/userProduct.store';
 //DATA
 
 //COMPONENTS
-
-
+import Product from "../../../components/Product";
+import { PromoCouponItem } from "../../../components/PromoCouponItem";
 
 export default function Feed() {
   analytics.trackScreen('Feed');
   const user = useAuth((state) => state.user);
+  const { loyaltyGift, promoCoupon } = useUserProductStore((state) => state);
 
   return (
     <>
@@ -33,10 +35,15 @@ export default function Feed() {
       
         <ScrollView horizontal={false} style={{width: "95%", left: "5%"}}>
       <View style={[styles.card, styles.shadowProp]}>   
-        <Text className="text-xs">
-          IMAGE OF GIFT
-          Your thank you gift is on its way!
-        </Text>
+        {loyaltyGift ? 
+          <Product 
+                title={loyaltyGift.title}
+                description={loyaltyGift.description}
+                price={loyaltyGift.price}
+                rating={loyaltyGift.rating}
+                brand={loyaltyGift.brand}
+                image={loyaltyGift.image}
+                category={loyaltyGift.category}/> : undefined}
       </View>
 
       <View style={[styles.card, styles.shadowProp]}>   
@@ -52,6 +59,9 @@ export default function Feed() {
           When you are ready to use your promo deal, simply click on it and 
           show the bar code to the cashier.
         </Text>
+        {promoCoupon ? <PromoCouponItem promoCoupon={promoCoupon} /> : undefined}
+        
+
       </View>
 
       

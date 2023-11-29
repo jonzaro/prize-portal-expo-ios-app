@@ -1,5 +1,3 @@
-
-
 // export interface Product {
 //     sku: number;
 //     name: string;
@@ -14,39 +12,30 @@
 //     url: string;
 //     image: string;
 //   }
-  
+
 //   export interface ProductCategory {
 //     id: string;
 //     name: string;
 //   }
 
 export interface ProductType {
-    key: number;
-    title: string;
-    description: string;
-    price: number;
-    wasPrice: number;
-    rating: number;
-    brand: string;
-    category: string;
-    thumbnail: string;
-    // images: ProductImages[];
-}
-  
-export interface ProductNew {
   id: number;
   title: string;
   description: string;
   price: number;
-  discountPercentage: number;
+  wasPrice: number;
   rating: number;
-  stock: number;
   brand: string;
   category: string;
-  thumbnail: string;
+  image: string;
   // images: ProductImages[];
-  }
+}
 
+export type PromoCoupon = {
+  promotionText: string;
+  promotionDescription: string;
+  brandImage: number;
+};
 
 // export interface ProductImages {
 //     url: string;

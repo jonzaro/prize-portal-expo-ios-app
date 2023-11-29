@@ -44,10 +44,12 @@ const Product: React.FC<ProductProps> = ({
   );
 };
 
+
 const styles = StyleSheet.create({
   container: {
     margin: 10,
     width: "100%",
+
     borderRadius: 10,
     overflow: 'hidden',
     backgroundColor: '#fff',
