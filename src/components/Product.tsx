@@ -13,7 +13,7 @@ interface ProductProps {
   image: string;
 }
 
-const Product: React.FC<ProductProps> = ({
+const Product = ({
   title,
   description,
   price,
@@ -22,7 +22,7 @@ const Product: React.FC<ProductProps> = ({
   brand,
   category,
   image,
-}) => {
+}: ProductProps) => {
 
 
     const textStyle = price < 100 ? styles.priceStrike : styles.price;
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   image: {
     width: '50%',
     height: 200,
+    
   },
   title: {
     fontSize: 16,
