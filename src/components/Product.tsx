@@ -71,7 +71,8 @@ const styles = StyleSheet.create({
     // paddingVertical: 5,
     paddingHorizontal: 15,
     // marginBottom: -20,
-    width: '90%',
+    width: '100%',
+    right: "5%",
     // height: '30%',
     // bottom: "7%",
     marginVertical: 5,
@@ -83,32 +84,32 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
   },
   image: {
-    width: '50%',
-    height: 200,
-    
+    width: '40%',
+    height: 100,
+    resizeMode: 'contain',
   },
   title: {
-    fontSize: 16,
+    fontSize: 12,
     fontWeight: 'bold',
     margin: 10,
   },
   description: {
-    fontSize: 14,
+    fontSize: 10,
     marginHorizontal: 10,
   },
   price: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
     margin: 10,
   },
   priceStrike: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
     margin: 10,
     textDecorationLine: 'line-through',
   },
   rating: {
-    fontSize: 14,
+    fontSize: 10,
     margin: 10,
   },
   brandCategory: {
