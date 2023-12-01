@@ -57,7 +57,7 @@ export default function Index() {
       />
 
 
-      <Text className="text-sm px-8 ml-6">
+      <Text className="text-lg px-8 ml-5 mt-3">
       You have {user?.rewardsPoints} loyalty points!
       </Text>
       </View>
@@ -195,8 +195,8 @@ const styles = StyleSheet.create({
   imageEarn: {
     height: 120,
    width: 200, // Set the width as needed
-    bottom: "2%",
-    left: "16%",
+    top: "9%",
+    left: "20%",
         marginBottom: -20,
   },
   bar: {

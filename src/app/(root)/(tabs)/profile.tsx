@@ -59,7 +59,7 @@ export default function Feed() {
           style={{
             height: 180,
             width: 200,
-            left: 160,
+            left: "47%",
             resizeMode: 'contain',
           }}
           // resizeMode="contain" // Adjust the resizeMode as needed
@@ -144,7 +144,7 @@ export default function Feed() {
                 image={loyaltyGift.image}
                 category={loyaltyGift.category}
               />
-              <View style={{width: "97%", height: "22%", left: 5, backgroundColor: "#64b093", borderRadius: 10, bottom: "28%", padding: 15}}>
+              <View style={{width: "97%", height: "22%", left: 5, backgroundColor: "#64b093", borderRadius: 10, bottom: "25%", padding: 15}}>
                 <Text style={{color: "white", fontWeight: "bold", top: 0, left: 10}}>Your thank you gift is on the way!</Text>
               <Text style={{marginTop: 7, marginLeft: 9, color: "white", fontWeight: "bold"}}>
               <FontAwesome5 name="plane" size={24} color="white" /> ----------- 
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     width: '40%',
     bottom: 150,
-    left: 20,
+    left: "8%",
     marginVertical: 5,
   }, 
   card: {
@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 20,
     paddingHorizontal: 20,
-    // flex: 1,
+    flex: 1,
     width: '90%',
     height: '38%',
     marginVertical: 5,
