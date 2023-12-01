@@ -88,8 +88,8 @@ export default function Feed() {
               {
                 <Image source={require('../../../assets/images/barcode.jpeg')} style={{left: 10, top: 5, width: "90%", height: "40%"}} resizeMode="contain"/>
               }
-              <Text style={{top: "5%", marginTop: 5, fontSize: 10}}>Terms and Conditions</Text>
-              <Text style={{top: "5%", fontSize: 6}}>
+              <Text style={{marginTop: 5, fontSize: 10}}>Terms and Conditions</Text>
+              <Text style={{fontSize: 6}}>
               This digital coupon can be used once per customer or account.
               The discount is not applicable to items already on sale, bundled offers, or in conjunction with other
               ongoing promotions. Please note that this coupon is non-transferable and cannot be exchanged 
@@ -113,8 +113,8 @@ export default function Feed() {
               {
                 <Image source={require('../../../assets/images/barcode.jpeg')} style={{left: 10, top: 5, width: "90%", height: "40%"}} resizeMode="contain"/>
               }
-              <Text style={{top: "5%", marginTop: 5, fontSize: 10}}>Terms and Conditions</Text>
-              <Text style={{top: "5%", fontSize: 6}}>
+              <Text style={{marginTop: 5, fontSize: 10}}>Terms and Conditions</Text>
+              <Text style={{fontSize: 6}}>
               This digital coupon is valid from 01/2024 to 09/2024  and can be used once per customer or account.
               The discount is not applicable to items already on sale, bundled offers, or in conjunction with other
               ongoing promotions. Please note that this coupon is non-transferable and cannot be exchanged 
@@ -142,7 +142,7 @@ export default function Feed() {
                 image={loyaltyGift.image}
                 category={loyaltyGift.category}
               />
-              <View style={{width: "95%", height: "18%", left: 7, backgroundColor: "#64b093", borderRadius: 10, bottom: "25%", padding: 20}}><Text style={{color: "white", fontWeight: "bold", left: 10}}>Your thank you gift is on the way!</Text></View>
+              <View style={{width: "95%", height: "22%", left: 7, backgroundColor: "#64b093", borderRadius: 10, bottom: "25%", padding: 20}}><Text style={{color: "white", fontWeight: "bold", top: 15, left: 10}}>Your thank you gift is on the way!</Text></View>
               </>
             ) : (
               <Text>
@@ -239,6 +239,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 20,
     paddingHorizontal: 20,
+    flex: 1,
     width: '90%',
     height: '38%',
     marginVertical: 5,

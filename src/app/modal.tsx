@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Platform, StyleSheet, ScrollView} from 'react-native';
+import { View, Platform, StyleSheet, ScrollView, Image} from 'react-native';
 import { StyledText as Text } from '_components/Text/StyledText';
 import * as Progress from 'react-native-progress';
 import { AntDesign } from '@expo/vector-icons'; 
@@ -10,9 +10,13 @@ export default function ModalScreen() {
   const user = useAuth((state) => state.user);
   return (
     <>
-    <View className="flex-1 items-center justify-middle p-4">
-      <Text className="text-2xl font-bold">How do your points work?</Text>
-          <Text className="text-sm" >
+    <Image
+      source={require('../assets/images/money.gif')}
+      style={{width: "100%", height: "25%", top: "1%"}}
+      />
+    <View className=" items-center top-5 p-4 ">
+      <Text className="text-xl font-bold ">How do your points work?</Text>
+          <Text className="text-xsm mt-5" >
             Unlock a world of exclusive benefits with our rewards program! Simply shop at our beloved brands, 
 earn points, and watch your loyalty elevate through silver, gold, and platinum tiers. Redeem your
  hard-earned points for exciting items and exclusive coupons, making every purchase a delightful 
@@ -29,7 +33,8 @@ earn points, and watch your loyalty elevate through silver, gold, and platinum t
         <Progress.Bar progress={0.7}  color="#62d2a2" borderWidth={1} borderColor="#7a7568" borderRadius={12} width={280} height={25}/>
     </View>
       </View>
-      <ScrollView  style={{width: "100%", height: 200, left: "5%", top: "20%"}}>
+
+      <ScrollView  style={{width: "100%", height: 200, left: "5%", top: "3%"}}>
       <View style={[styles.card2, styles.shadowProp]}>   
       <Text className="text-xl text-center text-teal-600 font-bold tracking-widest">
         Terms and Conditions
@@ -85,7 +90,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     right: "3%",
-    top: "40%", 
+    top: "4%", 
     marginVertical: 0,
     
   },

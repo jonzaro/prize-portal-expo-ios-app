@@ -42,7 +42,7 @@ export default function Index() {
       Welcome {user?.nickname}!
       </Text>
     </View>
-    <SafeAreaView
+    <SafeAreaView style={styles.bg}
       className={classNames({
         'flex flex-1 items-center justify-start': true,
         'bg-white': colorScheme === 'light',
@@ -100,7 +100,44 @@ export default function Index() {
           )}
         />
       </View>
-      <ScrollView style={{width: "100%", left: "5%"}}>
+
+
+
+      <View style={styles.bar}>
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.apple.com')}>
+            <Image 
+            source={require('../../../assets/images/Apple.png')}
+            style={{height:60, width:60, top: -4, left: 120, position: 'absolute'}}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.bestbuy.com')}>
+            <Image 
+            source={require('../../../assets/images/BestBuy.png')}
+            style={{height:40, width:40, bottom: -45, right: 50, position: 'absolute'}}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.walmart.com')}>
+            <Image 
+            source={require('../../../assets/images/Walmart.png')}
+            style={{height:60, width:60, top: -5, left: 41, position: 'absolute'}}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.macys.com')}>
+            <Image 
+            source={require('../../../assets/images/Macys.png')}
+            style={{height:60, width:60, top: -3, right: 121, position: 'absolute'}}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />
+        </TouchableOpacity>
+      </View>
+
+
       <View className="mt-5 p-5" style={styles.card2}>   
       <Image source={require("../../../assets/images/bubble2.jpeg")} style={styles.imageBubble} resizeMode='contain' />
               <Text style={styles.bubbleText}>
@@ -108,78 +145,11 @@ export default function Index() {
         redeemed for discounts, items, or exclusive perks.
         </Text>
       </View>
-      <View style={styles.containerFlex}>
 
-      <View style={styles.row}>
-        <TouchableOpacity onPress={() => Linking.openURL('https://www.apple.com')}>
-          <View style={styles.item}>
-            <Image 
-            source={require('../../../assets/images/Apple.png')}
-            style={styles.imageFlex}
-            resizeMode="contain" // Adjust the resizeMode as needed
-            />
-          </View>
-        </TouchableOpacity>
+      <TouchableOpacity onPress={() => Linking.openURL('https://storyset.com/business')}>
+        <Text style={{color: '#2b5e48', fontSize: 8, top: 162}}>Business illustrations by Storyset</Text>
+      </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => Linking.openURL('https://www.target.com')}>
-          <View style={styles.item}>
-            <Image 
-            source={require('../../../assets/images/Target.png')}
-            style={styles.imageFlex}
-            resizeMode="contain" // Adjust the resizeMode as needed
-            />
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => Linking.openURL('https://www.bestbuy.com')}>
-          <View style={styles.item}>
-            <Image 
-            source={require('../../../assets/images/BestBuy.png')}
-            style={styles.imageFlex}
-            resizeMode="contain" // Adjust the resizeMode as needed
-            />
-          </View>
-        </TouchableOpacity>
-
-      </View>
-
-
-      <View style={styles.row}>
-      <TouchableOpacity onPress={() => Linking.openURL('https://www.nike.com')}>
-          <View style={styles.item}>
-            <Image 
-            source={require('../../../assets/images/Nike.png')}
-            style={styles.imageFlex}
-            resizeMode="contain" // Adjust the resizeMode as needed
-            />
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => Linking.openURL('https://www.walmart.com')}>
-          <View style={styles.item}>
-            <Image 
-            source={require('../../../assets/images/Walmart.png')}
-            style={styles.imageFlex}
-            resizeMode="contain" // Adjust the resizeMode as needed
-            />
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => Linking.openURL('https://www.macys.com')}>
-          <View style={styles.item}>
-            <Image 
-            source={require('../../../assets/images/Macys.png')}
-            style={styles.imageFlex}
-            resizeMode="contain" // Adjust the resizeMode as needed
-            />
-          </View>
-        </TouchableOpacity>
-      </View>
-    </View>
-    </ScrollView>
-    <TouchableOpacity onPress={() => Linking.openURL('https://storyset.com/business')}>
-  <Text style={{color: '#2b5e48', fontSize: 8}}>Business illustrations by Storyset</Text>
-</TouchableOpacity>
       <StatusBar style="auto" />
     </SafeAreaView>
     </>
@@ -187,6 +157,9 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
+  bg: {
+    backgroundColor: '#c6f5df',
+  },
   containerTop: {
     flex: 1,
     justifyContent: 'center',
@@ -209,33 +182,31 @@ const styles = StyleSheet.create({
     left: "16%",
         marginBottom: -20,
   },
+  bar: {
+    backgroundColor: "white",
+    width: "100%",
+    height: 50,
+    top: 20,
+  },
+  
   imageBubble: {
-    position: 'absolute',
-    height: "200%",
-    width: "200%", // Set the width as needed
-    top: "10%",
+    // position: 'absolute',
+    height: "135%",
+    width: "135%", // Set the width as needed
+    bottom: "10%",
+    left: "5%",
+
     
     // marginBottom: -20,  
   },
   bubbleText: {
     fontSize: 9,
-    top: "25%",
-    left: "45%",
+    position: 'absolute',
+    top: "35%",
+    width: "23%",
+    right: "18%",
   },
-  containerFlex: {
-    flex: 3,
-    justifyContent: 'center',
-    flexDirection: 'column', // Flex direction is set to column for vertical arrangement
-    // marginRight: 40,
-  },
-  row: {
-    flex: 1,
-    flexDirection: 'row', // Flex direction is set to row for horizontal arrangement
-  },
-  item: {
-    flex: 1,
-    margin: 25,
-  },
+
   imageFlex: {
     width: 40, // Set the width as needed
     height: 40, // Set the height as needed
@@ -250,19 +221,22 @@ const styles = StyleSheet.create({
     marginBottom: -20,
     width: '90%',
     height: '30%',
-    bottom: "7%",
+    bottom: "3%",
     marginVertical: 5,
     
   },
   card2: {
-    // backgroundColor: '#c2f2dd',
+    backgroundColor: 'white',
     // borderColor: "#b5b5b5",
+    position: 'absolute',
     paddingVertical: 15,
-    paddingHorizontal: 25,
-    width: '60%',
-    height: '35%',
-    bottom: "1%",
-    right: "3%",
+    paddingHorizontal: 5,
+    width: 633,
+    height: '25%',
+    right: 4,
+    bottom: "5%",
+    
+   
     marginVertical: 0,
     
   },

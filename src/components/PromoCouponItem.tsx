@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
         marginLeft: "30%",
         color: '#555',
         bottom: "18%",
+        left: "3%",
       },
       imageEarn: {
         height: 50,
