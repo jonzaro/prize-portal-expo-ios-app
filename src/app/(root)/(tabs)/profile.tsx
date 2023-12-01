@@ -260,9 +260,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 20,
     paddingHorizontal: 20,
-    flex: 1,
+    flexShrink: 1,
     width: '90%',
-    height: '38%',
+    // height: '38%',
     marginVertical: 5,
   },
 
