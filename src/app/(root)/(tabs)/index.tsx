@@ -5,6 +5,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { viewportWidth, spacing } from '_utils/viewport';
 import { Link } from 'expo-router';
 import analytics from '_utils/analytics/segment';
+import { Fontisto } from '@expo/vector-icons'; 
+
 
 //i18n
 import { useTranslation } from 'react-i18next';
@@ -25,9 +27,7 @@ export default function Index() {
   const user = useAuth((state) => state.user);
 
 
-  const handleApplePress = () => {
-    Linking.openURL("www.apple.com");
-  };
+  
 
   analytics.trackScreen('Home');
 
@@ -139,15 +139,31 @@ export default function Index() {
 
 
       <View className="mt-5 p-5" style={styles.card2}>   
-      <Image source={require("../../../assets/images/bubble2.jpeg")} style={styles.imageBubble} resizeMode='contain' />
               <Text style={styles.bubbleText}>
         When you spend money at partner brands, you accrue points that can be 
         redeemed for discounts, items, or exclusive perks.
         </Text>
       </View>
 
+      <View className="mt-5 p-5" style={styles.card3}>   
+      <View style={{ flex: 1, flexDirection: 'row', justifyContent: "space-even" }}>
+
+      
+      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 22, marginRight: 22}} />
+      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 22, marginRight: 22}}/>
+      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 22, marginRight: 22}}/>
+      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 22, marginRight: 22}}/>
+      <Fontisto name="shopping-bag-1" size={20} color="#b1c4bc" style={{left: 22, marginRight: 22}} />
+      <Fontisto name="shopping-bag-1" size={20} color="#b1c4bc" style={{left: 22, marginRight: 22}}/>
+      <Fontisto name="shopping-bag-1" size={20} color="#b1c4bc" style={{left: 22, marginRight: 22}}/>
+              <Text style={styles.shoppingBar}>
+        Three more elligible purchases to level up to platinum tier!
+        </Text>
+      </View>
+      </View>
+
       <TouchableOpacity onPress={() => Linking.openURL('https://storyset.com/business')}>
-        <Text style={{color: '#2b5e48', fontSize: 8, top: 162}}>Business illustrations by Storyset</Text>
+        <Text style={{color: '#2b5e48', fontSize: 8, top: 167}}>Business illustrations by Storyset</Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />
@@ -184,27 +200,57 @@ const styles = StyleSheet.create({
   },
   bar: {
     backgroundColor: "white",
+    borderColor: "#689e8a",
+    borderWidth: 2,
     width: "100%",
+    borderRadius: 18,
     height: 50,
-    top: 20,
+    top: 14,
   },
   
-  imageBubble: {
-    // position: 'absolute',
-    height: "135%",
-    width: "135%", // Set the width as needed
-    bottom: "10%",
-    left: "5%",
-
-    
-    // marginBottom: -20,  
+  card2: {
+    backgroundColor: '#6de8ad',
+    // borderColor: "#b5b5b5",
+    position: 'absolute',
+    paddingVertical: 15,
+    paddingHorizontal: 5,
+    borderRadius: 18,
+    borderColor: "#689e8a",
+    borderWidth: 2,
+    width: "100%",
+    height: '12%',
+    bottom: "24%", 
+    marginVertical: 0,
   },
   bubbleText: {
-    fontSize: 9,
+    fontSize: 11,
     position: 'absolute',
-    top: "35%",
-    width: "23%",
-    right: "18%",
+    top: 11,
+    width: "99%",
+    left: 21,
+  },
+
+  card3: {
+    backgroundColor: 'white',
+    // borderColor: "#b5b5b5",
+    position: 'absolute',
+    paddingVertical: 15,
+    paddingHorizontal: 5,
+    borderRadius: 18,
+    borderColor: "#689e8a",
+    borderWidth: 2,
+    width: "100%",
+    height: '20%',
+    bottom: "6%", 
+    marginVertical: 0,
+  },
+  shoppingBar: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    position: 'absolute',
+    top: 40,
+    width: "99%",
+    left: 1,
   },
 
   imageFlex: {
@@ -223,21 +269,6 @@ const styles = StyleSheet.create({
     height: '30%',
     bottom: "3%",
     marginVertical: 5,
-    
-  },
-  card2: {
-    backgroundColor: 'white',
-    // borderColor: "#b5b5b5",
-    position: 'absolute',
-    paddingVertical: 15,
-    paddingHorizontal: 5,
-    width: 633,
-    height: '25%',
-    right: 4,
-    bottom: "5%",
-    
-   
-    marginVertical: 0,
     
   },
   shadowProp: {

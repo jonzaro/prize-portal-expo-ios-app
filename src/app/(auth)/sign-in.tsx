@@ -16,10 +16,13 @@ import { deviceInfo } from '_config/device';
 import { Label } from '_components/Label/StyledLabel';
 import { Alert } from '_utils/alert';
 
+
 const schema = z.object({
   email: emailSchema,
   password: z.string().min(8, 'auth.errors.password-invalid'),
 });
+
+
 
 export default function SignIn() {
   const { t } = useTranslation();
@@ -66,7 +69,7 @@ export default function SignIn() {
     <View className="flex-1 items-center p-4 gap-y-8">
       
       <View className="w-full bg-transparent">
-        <Label htmlFor="email-sign-in" className="font-bold mb-2">
+        <Label htmlFor="email-sign-in" className="font-bold mb-2 ">
           {t('auth.email')}
         </Label>
         <ControlledInput

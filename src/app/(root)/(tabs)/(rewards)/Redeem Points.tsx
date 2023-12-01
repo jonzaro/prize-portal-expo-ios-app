@@ -13,6 +13,7 @@ import { useUserProductStore } from 'src/store/userProduct.store';
 //DATA
 import newData from '../../../../assets/data/newData.json';
 import { useAuth } from 'src/store/authStore/auth.store';
+import { Alert } from 'react-native';
 
 
 
@@ -37,11 +38,29 @@ export default function RedeemPoints() {
   const result = calculateRewards(user?.rewardsPoints);
 
   const handlePress = (product: ProductType) => {
-    alert(`${'Apply ' + result + ' rewards dollars to this item?'}`) 
-    setPointsRedemptionItem(product);
-    router.push('/profile')
- 
-  }
+    Alert.alert(
+      'Confirm Redemption',
+      `Apply ${result} rewards dollars to this item?`,
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+          onPress: () => {
+            // Handle cancel button press (optional)
+          },
+        },
+        {
+          text: 'OK',
+          onPress: () => {
+            // Handle OK button press
+            setPointsRedemptionItem(product);
+            router.push('/profile');
+          },
+        },
+      ],
+      { cancelable: true }
+    );
+  };
 
   return (
     <SafeAreaView style={styles.bg} className="flex-1 items-center justify-center">

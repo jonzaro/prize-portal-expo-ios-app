@@ -15,6 +15,8 @@ import { Link } from 'expo-router';
 import analytics from '_utils/analytics/segment';
 import { useAuth } from 'src/store/authStore/auth.store';
 import { useUserProductStore } from 'src/store/userProduct.store';
+import { Entypo } from '@expo/vector-icons';
+
 //DATA
 
 //COMPONENTS
@@ -142,7 +144,15 @@ export default function Feed() {
                 image={loyaltyGift.image}
                 category={loyaltyGift.category}
               />
-              <View style={{width: "95%", height: "22%", left: 7, backgroundColor: "#64b093", borderRadius: 10, bottom: "25%", padding: 20}}><Text style={{color: "white", fontWeight: "bold", top: 15, left: 10}}>Your thank you gift is on the way!</Text></View>
+              <View style={{width: "97%", height: "22%", left: 5, backgroundColor: "#64b093", borderRadius: 10, bottom: "27%", padding: 15}}>
+                <Text style={{color: "white", fontWeight: "bold", top: 5, left: 10}}>Your thank you gift is on the way!</Text>
+              <Text style={{marginTop: 15, marginLeft: 9, color: "white", fontWeight: "bold"}}>
+              <FontAwesome5 name="plane" size={24} color="white" /> ----------- 
+              <FontAwesome5 name="shipping-fast" size={24} color="white" /> -----------
+              <Entypo name="home" size={24} color="white" />
+              </Text>
+              </View>
+
               </>
             ) : (
               <Text>
@@ -239,7 +249,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 20,
     paddingHorizontal: 20,
-    flex: 1,
+    // flex: 1,
     width: '90%',
     height: '38%',
     marginVertical: 5,

@@ -14,6 +14,7 @@ import { useIsFocused } from '@react-navigation/native';
 import analytics from '_utils/analytics/segment';
 import { Label } from '_components/Label/StyledLabel';
 import { Alert } from '_utils/alert';
+import SignIn from './sign-in';
 
 const schema = z.object({
   email: emailSchema,
@@ -50,9 +51,9 @@ export default function SignUp() {
     if (!error) {
       Alert.alert(t('auth.sign-up-completed'), undefined, [
         {
-          text: t('auth.go-to-sign-in'),
+          text: 'Off we go!',
           onPress: () => {
-            router.replace('/(auth)/sign-in');
+            router.replace('./(root)');
             reset();
           },
         },

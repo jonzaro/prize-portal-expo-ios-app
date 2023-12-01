@@ -62,7 +62,7 @@ export function ControlledInput<T extends FieldValues>(
         autoCapitalize="none"
         onChangeText={field.onChange}
         value={field.value as string}
-        className={`p-4 w-full shadow-sm rounded-sm border-2 border-transparent focus:border-blue-500 ${className}`}
+        className={`p-4 w-full shadow-sm rounded-lg border-2 border-transparent focus:border-teal-500 ${className}`}
         placeholderTextColor={placeholderTextColor}
         {...inputProps}
       />
