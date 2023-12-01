@@ -108,7 +108,7 @@ export default function Index() {
         <TouchableOpacity onPress={() => Linking.openURL('https://www.apple.com')}>
             <Image 
             source={require('../../../assets/images/Apple.png')}
-            style={{height:60, width:60, top: -4, left: 120, position: 'absolute'}}
+            style={{height:60, width:60, top: -4, left: 140, position: 'absolute'}}
             resizeMode="contain" // Adjust the resizeMode as needed
             />
         </TouchableOpacity>
@@ -132,7 +132,7 @@ export default function Index() {
         <TouchableOpacity onPress={() => Linking.openURL('https://www.macys.com')}>
             <Image 
             source={require('../../../assets/images/Macys.png')}
-            style={{height:60, width:60, top: -3, right: 121, position: 'absolute'}}
+            style={{height:60, width:60, top: -3, right: 131, position: 'absolute'}}
             resizeMode="contain" // Adjust the resizeMode as needed
             />
         </TouchableOpacity>
@@ -150,13 +150,13 @@ export default function Index() {
       <View style={{ flex: 1, flexDirection: 'row', justifyContent: "space-even" }}>
 
       
-      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 22, marginRight: 22}} />
-      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 22, marginRight: 22}}/>
-      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 22, marginRight: 22}}/>
-      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 22, marginRight: 22}}/>
-      <Fontisto name="shopping-bag-1" size={20} color="#b1c4bc" style={{left: 22, marginRight: 22}} />
-      <Fontisto name="shopping-bag-1" size={20} color="#b1c4bc" style={{left: 22, marginRight: 22}}/>
-      <Fontisto name="shopping-bag-1" size={20} color="#b1c4bc" style={{left: 22, marginRight: 22}}/>
+      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 52, marginRight: 22}} />
+      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 52, marginRight: 22}}/>
+      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 52, marginRight: 22}}/>
+      <Fontisto name="shopping-bag-1" size={20} color="#246147" style={{left: 52, marginRight: 22}}/>
+      <Fontisto name="shopping-bag-1" size={20} color="#b1c4bc" style={{left: 52, marginRight: 22}} />
+      <Fontisto name="shopping-bag-1" size={20} color="#b1c4bc" style={{left: 52, marginRight: 22}}/>
+      <Fontisto name="shopping-bag-1" size={20} color="#b1c4bc" style={{left: 52, marginRight: 22}}/>
               <Text style={styles.shoppingBar}>
         Three more elligible purchases to level up to platinum tier!
         </Text>
@@ -164,7 +164,7 @@ export default function Index() {
       </View>
 
       <TouchableOpacity onPress={() => Linking.openURL('https://storyset.com/business')}>
-        <Text style={{color: '#2b5e48', fontSize: 8, top: 167}}>Business illustrations by Storyset</Text>
+        <Text style={{color: '#2b5e48', fontSize: 8, top: 281 }}>Business illustrations by Storyset</Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />
@@ -205,8 +205,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     width: "100%",
     borderRadius: 18,
-    height: 50,
-    top: 14,
+    height: 60,
+    top: "6%",
   },
   
   card2: {
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     width: "100%",
     height: '12%',
-    bottom: "24%", 
+    bottom: "33%", 
     marginVertical: 0,
   },
   bubbleText: {
@@ -241,17 +241,17 @@ const styles = StyleSheet.create({
     borderColor: "#689e8a",
     borderWidth: 2,
     width: "100%",
-    height: '20%',
-    bottom: "6%", 
+    height: '18%',
+    bottom: "17%", 
     marginVertical: 0,
   },
   shoppingBar: {
     fontSize: 11,
     fontWeight: 'bold',
     position: 'absolute',
-    top: 40,
+    top: "60%",
     width: "99%",
-    left: 1,
+    left: 20,
   },
 
   imageFlex: {

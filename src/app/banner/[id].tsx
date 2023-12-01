@@ -59,7 +59,7 @@ card: {
   paddingHorizontal: 20,
   top: "12%",
   width: '90%',
-  height: '60%',  
+  height: '40%',  
   marginVertical: 5,
 }, 
 shadowProp: {
@@ -70,7 +70,7 @@ shadowProp: {
 },
 bgImg: {
   position: 'absolute',
-  bottom: "-15%",
+  bottom: "10%",
   opacity: 0.3,
   height: 800, 
   
