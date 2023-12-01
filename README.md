@@ -1,10 +1,7 @@
-
 # Prize Portal Loyalty App 🏎️📱
 
 ![Supports Expo iOS](https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff)
-![Supports Expo Android](https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff)
 [![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
-
 
 - Expo
 - [Expo Router](https://expo.github.io/router)
@@ -21,15 +18,19 @@
 
 1. Clone the new repository.
 2. Install dependencies.
+
 ```bash
 yarn install
 ```
+
 4. Run the project
+
 ```bash
 yarn ios | yarn start  -> i (for ios)
 ```
 
 ## ENVIRONMENT VARIABLES
+
 1. Create a .env file in the root of the project.
 2. Define env variables inside the .env file
 3. Use env variables everywhere by import env-loader
@@ -67,8 +68,7 @@ Main screens:
 - Settings Screen
 - Top Navigation , Bottom Navigation, Native Modal
 
-
 ## 🚧 Roadmap 🚧
 
 I would like to thank the following people who've contributed to this project:
- [@kewinzaq1](https://github.com/kewinzaq1)
+[@kewinzaq1](https://github.com/kewinzaq1)
