@@ -54,11 +54,21 @@ export default function Feed() {
   return (
     <>
       <SafeAreaView style={styles.bg}>
+        <Image
+          source={require('../../../assets/images/profile.png')}
+          style={{
+            height: 180,
+            width: 200,
+            left: 160,
+            resizeMode: 'contain',
+          }}
+          // resizeMode="contain" // Adjust the resizeMode as needed
+        />
         <View
           style={[
-            styles.card,
+            styles.cardTop,
             styles.shadowProp,
-            { marginLeft: 35, width: '80%' },
+            
           ]}
         >
           <Text style={styles.title}>CHA-CHING!</Text>
@@ -66,16 +76,6 @@ export default function Feed() {
             Welcome to your world of savings—you can find your thank you gift,
             promo deals, and points redemption items here.
           </Text>
-          <Image
-            source={require('../../../assets/images/profile.png')}
-            style={{
-              height: 180,
-              width: 300,
-              right: 15,
-              resizeMode: 'contain',
-            }}
-            // resizeMode="contain" // Adjust the resizeMode as needed
-          />
         </View>
         
         <Modal visible={pointsItemModalVisible} animationType="slide" transparent>
@@ -95,7 +95,7 @@ export default function Feed() {
               This digital coupon can be used once per customer or account.
               The discount is not applicable to items already on sale, bundled offers, or in conjunction with other
               ongoing promotions. Please note that this coupon is non-transferable and cannot be exchanged 
-               for cash or other forms of discounts.
+              for cash or other forms of discounts.
               </Text>
             </View>
           </View>
@@ -120,7 +120,7 @@ export default function Feed() {
               This digital coupon is valid from 01/2024 to 09/2024  and can be used once per customer or account.
               The discount is not applicable to items already on sale, bundled offers, or in conjunction with other
               ongoing promotions. Please note that this coupon is non-transferable and cannot be exchanged 
-               for cash or other forms of discounts.
+              for cash or other forms of discounts.
               </Text>
             </View>
             </View>
@@ -130,7 +130,7 @@ export default function Feed() {
         <ScrollView
           horizontal={false}
           contentContainerStyle={{ flexGrow: 1 }}
-          style={{ width: '99%', left: '5%' }}
+          style={{ width: '99%', height: "61%", bottom: 110, left: '5%' }}
         >
           <View style={[styles.card3, styles.shadowProp]}>
             {loyaltyGift ? (
@@ -144,9 +144,9 @@ export default function Feed() {
                 image={loyaltyGift.image}
                 category={loyaltyGift.category}
               />
-              <View style={{width: "97%", height: "22%", left: 5, backgroundColor: "#64b093", borderRadius: 10, bottom: "27%", padding: 15}}>
-                <Text style={{color: "white", fontWeight: "bold", top: 5, left: 10}}>Your thank you gift is on the way!</Text>
-              <Text style={{marginTop: 15, marginLeft: 9, color: "white", fontWeight: "bold"}}>
+              <View style={{width: "97%", height: "22%", left: 5, backgroundColor: "#64b093", borderRadius: 10, bottom: "28%", padding: 15}}>
+                <Text style={{color: "white", fontWeight: "bold", top: 0, left: 10}}>Your thank you gift is on the way!</Text>
+              <Text style={{marginTop: 7, marginLeft: 9, color: "white", fontWeight: "bold"}}>
               <FontAwesome5 name="plane" size={24} color="white" /> ----------- 
               <FontAwesome5 name="shipping-fast" size={24} color="white" /> -----------
               <Entypo name="home" size={24} color="white" />
@@ -217,7 +217,6 @@ export default function Feed() {
 const styles = StyleSheet.create({
   bg: {
     backgroundColor: '#62d2a2',
-    flex: 1,
   },
   modal: {
     height: "100%", 
@@ -232,6 +231,18 @@ const styles = StyleSheet.create({
     borderColor: "#092e23",
     // borderTopColor:  "green"
   },
+  cardTop: {
+    backgroundColor: 'white',
+    borderColor: '#b5b5b5',
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    width: '40%',
+    bottom: 150,
+    left: 20,
+    marginVertical: 5,
+  }, 
   card: {
     backgroundColor: 'white',
     borderColor: '#b5b5b5',
@@ -268,7 +279,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   text: {
-    fontSize: 12,
+    fontSize: 10,
     textAlign: 'center',
   },
   divider: {
