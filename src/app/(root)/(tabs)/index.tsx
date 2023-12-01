@@ -81,6 +81,7 @@ export default function Index() {
                   id: item.id,
                   title: item.title,
                   description: item.description,
+                  longDescription: item.longDescription,
                 },
               }}
               style={{

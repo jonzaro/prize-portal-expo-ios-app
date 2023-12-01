@@ -3,24 +3,28 @@
     "id": 1,
     "title": "Black Friday Sale",
     "description": " Start earning more points with our Black Friday Sale!",
+    "longDescription": " Unlock incredible rewards this Black Friday! Elevate your points game by seizing exclusive deals and promotions. Don't miss out on the chance to maximize your rewards and indulge in fantastic savings during our spectacular Black Friday Sale!",
     "imageUrl": "https://yourdomain.com/path_to_images/image1.jpg"
   },
   {
     "id": 2,
     "title": "x2 Points December",
     "description": " Take advantage of our Double Points December!",
+    "longDescription": "Make this December twice as rewarding with our Double Points promotion! Every purchase you make during this festive season counts double towards your rewards. It's the perfect time to shop, earn, and treat yourself to even more amazing perks. Happy holidays and happy earning!",
     "imageUrl": "https://yourdomain.com/path_to_images/image2.jpg"
   },
   {
     "id": 3,
     "title": "Apple x PrizePortal",
-    "description": " Apple is officially our newest affiliate brand. ",
+    "description": "Apple is officially our newest affiliate brand. ",
+    "longDescription": "We're thrilled to announce that Apple has joined our family of affiliate brands! Now, every Apple purchase you make through our program not only brings you top-notch technology but also adds up to more exciting rewards. Upgrade your devices and elevate your rewards game with our latest partnership. Happy shopping, happy earning!",
     "imageUrl": "https://yourdomain.com/path_to_images/image3.jpg"
   },
   {
     "id": 4,
     "title": "Prizes for everyone",
     "description": " When you claim a prize, we donate a prize, too.",
+    "longDescription": "At Prize Portal, our commitment goes beyond rewards — It extends to making a positive impact together. With our Charity Rewards initiative, every time you claim a prize, we donate a corresponding prize to a child in need. Join us in making a difference with every redemption, turning your rewards into acts of kindness. Together, let's spread joy and create a chain of giving that truly rewards us all.",
     "imageUrl": "https://yourdomain.com/path_to_images/image4.jpg"
   }
 ]
