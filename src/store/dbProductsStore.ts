@@ -14,6 +14,8 @@ import { ProductType } from '../utils/types';
 //   image: string;
 // }
 
+// THIS FILE DOES NOT WORK YET
+
 interface DbProductsStore {
   products: ProductType[];
 

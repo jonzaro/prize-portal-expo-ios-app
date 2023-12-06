@@ -1,10 +1,10 @@
 import { View, Text, Image } from 'react-native';
-import { ProductNew } from "_utils/types"
+import { ProductType } from "_utils/types"
 
 
 
 interface RenderItemProps {
-  item: ProductNew;
+  item: ProductType;
 }
 
 export default function FeedItem({ item }: RenderItemProps) {

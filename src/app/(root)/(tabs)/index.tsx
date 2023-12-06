@@ -18,7 +18,7 @@ import homeData from '_assets/data/home.json';
 import { classNames } from '_utils/classNames';
 import { useColorScheme } from 'nativewind';
 import { useAuth } from 'src/store/authStore/auth.store';
-import analytics from '_utils/analytics/segment';
+// import analytics from '_utils/analytics/segment';
 
 export default function Index() {
 
@@ -37,7 +37,7 @@ export default function Index() {
 
 
 
-  analytics.trackScreen('Home');
+  // analytics.trackScreen('Home');
 
   return (
     <>
@@ -81,11 +81,7 @@ export default function Index() {
           showPagination={true}
           renderItem={({ item }: any) => (
             <Link
-              onPress={() => {
-                analytics.trackEvent('Banner Pressed', {
-                  bannerId: item.id,
-                });
-              }}
+              
               href={{
                 pathname: '/banner/[id]',
                 params: {

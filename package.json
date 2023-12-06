@@ -19,8 +19,6 @@
     "@hookform/resolvers": "^3.2.0",
     "@react-native-picker/picker": "2.4.10",
     "@react-navigation/material-top-tabs": "^6.6.3",
-    "@segment/analytics-react-native": "^2.16.0",
-    "@segment/sovran-react-native": "^1.0.4",
     "@shopify/flash-list": "1.4.3",
     "@types/react": "~18.2.14",
     "@types/react-native": "^0.72.2",
