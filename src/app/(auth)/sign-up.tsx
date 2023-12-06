@@ -11,10 +11,10 @@ import { useSetTitle } from 'src/hooks/useSetTitle';
 import { router } from 'expo-router';
 import { emailSchema } from '_utils/auth.schema';
 import { useIsFocused } from '@react-navigation/native';
-import analytics from '_utils/analytics/segment';
 import { Label } from '_components/Label/StyledLabel';
 import { Alert } from '_utils/alert';
-import SignIn from './sign-in';
+import { deviceInfo } from '_config/device';
+
 
 const schema = z.object({
   email: emailSchema,
@@ -22,9 +22,17 @@ const schema = z.object({
   nickname: z.string().nonempty('auth.errors.nickname-required'),
 });
 
+
+
 export default function SignUp() {
   const { t } = useTranslation();
   useSetTitle(t('auth.sign-up'));
+  
+  const login = useAuth((state) => {
+   
+    return state.login;
+  });
+
 
   const isFocused = useIsFocused();
 
@@ -38,26 +46,17 @@ export default function SignUp() {
   });
 
   const register = useAuth((state) => {
-    analytics.trackIdentify(state.user?.email, {
-      username: state.user?.nickname,
-      email: state.user?.email,
-    });
+    
     return state.register;
   });
 
   const onSubmit = handleSubmit((newUser) => {
     const { error } = register(newUser) ?? {};
-
+    login(newUser);
+    // <GetProductData />
     if (!error) {
-      Alert.alert(t('auth.sign-up-completed'), undefined, [
-        {
-          text: 'Off we go!',
-          onPress: () => {
-            router.replace('./(root)');
-            reset();
-          },
-        },
-      ]);
+      Alert.alert(t('auth.sign-up-completed'), undefined,      
+      );
       return;
     }
 
@@ -82,22 +81,24 @@ export default function SignUp() {
         <ControlledInput
           id="email-sign-up"
           keyboardType="email-address"
-          placeholder="joe@acme.com"
+          placeholder="shop@save.com"
           control={control}
           name="email"
         />
       </View>
+
       <View className="w-full bg-transparent">
         <Label htmlFor="nickname" className="font-bold mb-2">
           {t('auth.nickname')}
         </Label>
         <ControlledInput
           id="nickname"
-          placeholder="joeDoe@12"
+          placeholder="SuperShopper3412"
           control={control}
           name="nickname"
         />
       </View>
+
       <View className="w-full bg-transparent">
         <Label htmlFor="password-sign-up" className="font-bold mb-2">
           {t('auth.password')}
@@ -110,7 +111,7 @@ export default function SignUp() {
         />
       </View>
       <View className="mt-4 bg-transparent w-full">
-        <Button title={t('auth.sign-up')} onPress={onSubmit} />
+        <Button title={t('auth.sign-up')} onPress={onSubmit} color="#315445"/>
       </View>
 
     </View>
@@ -121,9 +122,10 @@ export default function SignUp() {
 
 const styles = StyleSheet.create({
 
+
   bottomBanner: {
     backgroundColor: '#62d2a2',
-    height: 60,
+    height: "15%",
     width: 500,
   },
 })

@@ -4,9 +4,13 @@ import { StyledText as Text } from '_components/Text/StyledText';
 import * as Progress from 'react-native-progress';
 import { AntDesign } from '@expo/vector-icons';
 import { useAuth } from 'src/store/authStore/auth.store';
+import { useCountUpAnimation } from 'src/hooks/useCountUpAnimation';
 
 export default function ModalScreen() {
   const user = useAuth((state) => state.user);
+
+  const animatedTotal = useCountUpAnimation(user?.rewardsPoints, { duration: 800 })
+
   return (
     <>
       <View style={styles.trophyCard}>
@@ -15,7 +19,7 @@ export default function ModalScreen() {
       <View style={styles.cardThin}>
         
           <Text className="text-lg font-bold">
-            Gold Tier - {user?.rewardsPoints}
+            Gold Tier - {animatedTotal}
           </Text>
         <Progress.Bar
           progress={0.7}
@@ -44,7 +48,7 @@ export default function ModalScreen() {
       <View className="mt-11"></View>
 
       <ScrollView
-        style={{ width: '100%', height: 200, left: '5%', bottom: '3%' }}
+        style={{ width: '100%', height: 200, left: '5%', bottom: '3%' } }
       >
         <View style={[styles.card2, styles.shadowProp]}>
           <Text className="text-xl text-center text-teal-600 font-bold tracking-widest">

@@ -32,6 +32,7 @@ export interface ProductType {
 }
 
 export type PromoCoupon = {
+  id: number;
   promotionText: string;
   promotionDescription: string;
   brandImage: number;

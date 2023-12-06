@@ -1,38 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View , Image, StyleSheet, ScrollView, Linking, TouchableOpacity} from 'react-native';
-
+import { Text, View , Image, StyleSheet, ScrollView, Linking, TouchableOpacity, Touchable} from 'react-native';
+import React, { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { viewportWidth, spacing } from '_utils/viewport';
-import { Link } from 'expo-router';
-import analytics from '_utils/analytics/segment';
+import { Link, router } from 'expo-router';
 import { Fontisto } from '@expo/vector-icons'; 
-
-
-//i18n
+import { ProductType } from '_utils/types';
+//i18ns
 import { useTranslation } from 'react-i18next';
 
 //Components
 import { Carousel } from '_components/Carousel/Carousel';
+import { useCountUpAnimation } from 'src/hooks/useCountUpAnimation';
+
 //Data
 import homeData from '_assets/data/home.json';
 import { classNames } from '_utils/classNames';
 import { useColorScheme } from 'nativewind';
 import { useAuth } from 'src/store/authStore/auth.store';
-import { ExternalLink } from '_components/Link/ExternalLink';
+import analytics from '_utils/analytics/segment';
 
 export default function Index() {
+
+
   const { t } = useTranslation();
   const { colorScheme } = useColorScheme();
 
   const user = useAuth((state) => state.user);
 
 
-  
+  const animatedTotal = useCountUpAnimation(user?.rewardsPoints, { duration: 800 })
+
+
+
+
+
+
 
   analytics.trackScreen('Home');
 
   return (
     <>
+    <TouchableOpacity onPress={() => router.push('/profile')}>
     <Image
       source={require('../../../assets/images/logoIcon.jpg')}
       style={styles.imageLogo}
@@ -42,6 +51,7 @@ export default function Index() {
       Welcome {user?.nickname}!
       </Text>
     </View>
+    </TouchableOpacity>
     <SafeAreaView style={styles.bg}
       className={classNames({
         'flex flex-1 items-center justify-start': true,
@@ -57,14 +67,15 @@ export default function Index() {
       />
 
 
-      <Text className="text-lg px-8 ml-5 mt-3">
-      You have {user?.rewardsPoints} loyalty points!
+      <Text className="text-lg px-8 ml-5 mt-8">
+      You have {animatedTotal} loyalty points!
       </Text>
       </View>
 
       
+      <View style={[styles.cardSlider, styles.shadowProp]}>   
 
-      <View className="w-screen">
+      <View className="w-screen right-7">
         <Carousel
           data={homeData}
           showPagination={true}
@@ -85,14 +96,7 @@ export default function Index() {
                 },
               }}
               style={{
-                width: viewportWidth - spacing,
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 5 },
-                shadowOpacity: 0.5,
-                shadowRadius: 3,
-                elevation: 1,
-                
-              }}
+                width: viewportWidth - spacing,              }}
               className="justify-center items-center rounded-2xl p-4"
             >
               <Text className="text-xl font-bold">{item.title}-   </Text>
@@ -100,6 +104,7 @@ export default function Index() {
             </Link>
           )}
         />
+      </View>
       </View>
 
 
@@ -164,7 +169,7 @@ export default function Index() {
       </View>
 
       <TouchableOpacity onPress={() => Linking.openURL('https://storyset.com/business')}>
-        <Text style={{color: '#2b5e48', fontSize: 8, top: 281 }}>Business illustrations by Storyset</Text>
+        <Text style={{color: '#2b5e48', fontSize: 8, top: 231 }}>Business illustrations by Storyset</Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />
@@ -176,6 +181,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   bg: {
     backgroundColor: '#c6f5df',
+    marginTop: -10,
   },
   containerTop: {
     flex: 1,
@@ -191,6 +197,7 @@ const styles = StyleSheet.create({
     height: 40, // Set the height as needed
     borderRadius: 5, // Optional: Add border-radius for rounded corners
     marginLeft:20,
+    marginTop: 20,
   },
   imageEarn: {
     height: 120,
@@ -210,7 +217,7 @@ const styles = StyleSheet.create({
   },
   
   card2: {
-    backgroundColor: '#6de8ad',
+    backgroundColor: '#c6f5df',
     // borderColor: "#b5b5b5",
     position: 'absolute',
     paddingVertical: 15,
@@ -247,7 +254,6 @@ const styles = StyleSheet.create({
   },
   shoppingBar: {
     fontSize: 11,
-    fontWeight: 'bold',
     position: 'absolute',
     top: "60%",
     width: "99%",
@@ -269,6 +275,19 @@ const styles = StyleSheet.create({
     width: '90%',
     height: '30%',
     bottom: "3%",
+    marginVertical: 5,
+  },
+  cardSlider: {
+    backgroundColor: 'white',
+    borderColor: "#b5b5b5",
+    borderWidth: 1,
+    borderRadius: 8,
+    // paddingVertical: 5,
+    paddingHorizontal: 15,
+    marginBottom: -20,
+    width: '90%',
+    height: '22%',
+    top: "1%",
     marginVertical: 5,
     
   },

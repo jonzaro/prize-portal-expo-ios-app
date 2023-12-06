@@ -1,49 +1,81 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 //COMPONENTS
-import { Pressable, Text, View } from 'react-native';
+import { Button, Text, View, StyleSheet } from 'react-native';
 import DeviceInfo from '_components/Device/DeviceInfo';
 import AppVersion from '_components/Device/AppVersion';
-import LoginInfo from '_components/Login/LoginInfo';
-import Divider from '_components/Divider/Divider';
+import { useAuth } from 'src/store/authStore/auth.store';
 
 import { useColorScheme as nativewindUseColorScheme } from 'nativewind';
-import analytics from '_utils/analytics/segment';
 import LanguagePicker from '_components/Picker/LanguagePicker';
 
 export default function Settings() {
   const { colorScheme, toggleColorScheme } = nativewindUseColorScheme();
 
-  analytics.trackScreen('Settings');
+
+  const logout = useAuth(({ logout }) => logout);
 
   return (
-    <SafeAreaView className="flex-1 items-center justify-between">
-      <View className="flex-1">
-        {/* <Pressable
-          onPress={() => {
-            toggleColorScheme();
+    <SafeAreaView style={styles.bg} className="flex-1 items-center">
+     
+      <View style={[styles.cardSignOut, styles.shadowProp]}>
+      <Button title={"Sign-out"} onPress={logout} color="red" />
 
-            analytics.trackEvent('Color Scheme Toggled', {
-              colorScheme: colorScheme,
-            });
-          }}
-        >
-          <Text className="text-green-500">{`The color scheme is ${colorScheme}`}</Text>
-        </Pressable> */}
-      </View>
-      <View className="flex-1 relative bg-transparent">
-        <LoginInfo />
-      </View>
-      <View className="flex-1 relative bg-transparent">
-        <LanguagePicker />
-      </View>
 
-      <View className="flex-1 justify-end relative bg-transparent mt-12">
+      </View>
+      <View style={[styles.card, styles.shadowProp]}>
+
         <Text className="text-lg font-bold">Device Info</Text>
         <DeviceInfo />
-        <Divider />
         <AppVersion />
       </View>
+      <View style={[styles.cardLang, styles.shadowProp]}>
+
+        <LanguagePicker />
+        </View>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  bg: {
+    backgroundColor: '#62d2a2',
+  },
+cardSignOut: {
+    borderColor: '#315445',
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderOpacity: 0.5,
+    borderRadius: 5,
+    width: "90%",
+},
+  card: {
+    borderColor: '#315445',
+    backgroundColor: 'white',
+    borderWidth: 1,
+    // flex: 1,
+    borderOpacity: 0.5,
+    borderRadius: 5,
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+    width: "90%",
+  },
+  cardLang: {
+    borderColor: '#315445',
+    backgroundColor: 'white',
+    borderWidth: 1,
+    // flex: 1,
+    borderOpacity: 0.5,
+    borderRadius: 5,
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+    width: "90%",
+    height: "30%",
+  },
+  shadowProp: {
+    shadowColor: '#171717',
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+  },
+});

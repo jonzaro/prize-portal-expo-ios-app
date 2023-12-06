@@ -42,15 +42,15 @@ export default function IndexTopTabsLayout() {
 
 const styles = StyleSheet.create({
   imageLogo: {
-    width: 220, // Set the width as needed
-    height: 100, // Set the height as needed
-    marginLeft: 80,
-    marginTop: 20,
+    width: 300, // Set the width as needed
+    height: 200, // Set the height as needed
+    marginLeft: "14%",
+    marginTop: "8%",
     borderRadius: 25, // Optional: Add border-radius for rounded corners
   },
   topBanner: {
     backgroundColor: '#62d2a2',
-    height: 140,
+    height: 240,
     width: 500,
   },
   bottomBanner: {

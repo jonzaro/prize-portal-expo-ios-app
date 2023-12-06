@@ -1,6 +1,5 @@
 import { View, Image, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 import { Link, router } from 'expo-router';
-import analytics from '_utils/analytics/segment';
 import { ScrollView } from 'react-native-gesture-handler';
 import type {ProductType, PromoCoupon} from "../../../utils/types";
 import { useUserProductStore } from 'src/store/userProduct.store';
@@ -9,35 +8,40 @@ import { PromoCouponItem } from "../../../components/PromoCouponItem";
 
 
 export default function Feed() {
-  analytics.trackScreen('Feed');
 
   const promoData: PromoCoupon[] = [
     {
+      id: 1,
       promotionText: 'Get 20% off',
       promotionDescription: 'Exclusive discount on selected items',
       brandImage: require('../../../assets/images/finishline.png'),
     },
     {
+      id: 2,
       promotionText: 'Buy one, get one free',
       promotionDescription: 'Limited-time offer on various products',
       brandImage: require('../../../assets/images/ace.png'),
     },
     {
+      id: 3,
       promotionText: 'Flash Sale - 24 Hours Only',
       promotionDescription: 'Hurry up and grab your favorites at unbeatable prices',
       brandImage: require('../../../assets/images/roku.png'),
     },
     {
+      id: 4,
       promotionText: 'Free Shipping on Orders over $50',
       promotionDescription: 'Enjoy complimentary shipping on qualifying purchases',
       brandImage: require('../../../assets/images/twitch.png'),
     },
     {
+      id: 5,
       promotionText: 'Special Bundle Deals',
       promotionDescription: 'Save big with our curated product bundles',
       brandImage: require('../../../assets/images/doordash.png'),
     },
     {
+      id: 6,
       promotionText: 'Reward Points Bonanza',
       promotionDescription: 'Earn double points on every purchase this month',
       brandImage: require('../../../assets/images/Walmart.png'),
@@ -65,7 +69,7 @@ export default function Feed() {
         {promoData.map((item, index) => (
           <TouchableOpacity onPress={() => handlePress(item)}>
 
-          <PromoCouponItem promoCoupon ={item}/>
+          <PromoCouponItem  key={item.id} promoCoupon ={item}/>
         </TouchableOpacity>
         ))}
       </ScrollView>

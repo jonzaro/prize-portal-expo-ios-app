@@ -32,9 +32,6 @@ import { NativeWindStyleSheet } from 'nativewind';
 //OneSignal
 // import OneSignal from 'react-native-onesignal';
 
-//SEGMENT - ANALYTICS
-import { AnalyticsProvider } from '@segment/analytics-react-native';
-import { segmentClient } from '_config/segment';
 
 import { I18nextProvider } from 'react-i18next';
 import { StatusBar } from 'expo-status-bar';

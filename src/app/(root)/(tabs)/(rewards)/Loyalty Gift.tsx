@@ -10,8 +10,6 @@ import {
 } from 'react-native';
 import { Link, router} from 'expo-router';
 import { ProductType } from '_utils/types';
-import analytics from '_utils/analytics/segment';
-import React, { useState } from 'react';
 import { useAuth } from 'src/store/authStore/auth.store';
 import { useUserProductStore } from 'src/store/userProduct.store';
 import Product from '../../../../components/Product';
@@ -23,7 +21,6 @@ import newData from '../../../../assets/data/newData.json';
 import FeedItem from '_components/Feed/FeedItem';
 
 export default function Feed() {
-  analytics.trackScreen('Feed');
 
   const setLoyaltyGift = useUserProductStore((store) => store.setLoyaltyGift);
 
@@ -43,7 +40,7 @@ export default function Feed() {
         style={styles.bg}
         className="flex-1 items-center justify-center"
       >
-        <View style={[styles.card, styles.shadowProp]}>
+        <View style={styles.card}>
           <Text>
             Congratulations on becoming a Gold Tier in our loyalty program! As a
             token of our gratitude, we're thrilled to send you a special gift
@@ -64,8 +61,7 @@ export default function Feed() {
                 rating={item.rating}
                 brand={item.brand}
                 image={item.image}
-                category={item.category}
-              />
+                category={item.category} id={0}              />
             </TouchableOpacity>
           ))}
         </ScrollView>
@@ -81,12 +77,12 @@ const styles = StyleSheet.create({
 
   card: {
     backgroundColor: 'white',
-    borderColor: '#b5b5b5',
-    borderWidth: 1,
-    borderRadius: 8,
+    borderColor: '#315445',
+    borderWidth: 2,
     paddingVertical: 20,
-    paddingHorizontal: 20,
-    marginVertical: 5,
+    paddingHorizontal: 45,
+    marginVertical: 10,
+    width: "105%",
   },
   shadowProp: {
     shadowColor: '#171717',

@@ -11,7 +11,6 @@ import { useSetTitle } from 'src/hooks/useSetTitle';
 import { ResetPasswordModal } from 'src/components/ResetPasswordModal';
 import { useIsFocused } from '@react-navigation/native';
 import { emailSchema } from '_utils/auth.schema';
-import analytics from '_utils/analytics/segment';
 import { deviceInfo } from '_config/device';
 import { Label } from '_components/Label/StyledLabel';
 import { Alert } from '_utils/alert';
@@ -41,10 +40,7 @@ export default function SignIn() {
   });
 
   const login = useAuth((state) => {
-    analytics.trackEvent('User Logged In', {
-      email: state.user?.email,
-      userPhone: deviceInfo,
-    });
+    
     return state.login;
   });
 
@@ -75,7 +71,7 @@ export default function SignIn() {
         <ControlledInput
           id="email-sign-in"
           keyboardType="email-address"
-          placeholder="joe@acme.com"
+          placeholder="save@shop.com"
           control={control}
           name="email"
         />
@@ -86,12 +82,13 @@ export default function SignIn() {
         </Label>
         <ControlledInput
           id="password-sign-in"
+          className="mb-11"
           control={control}
           name="password"
           secureTextEntry
         />
       </View>
-        <Button title={t('auth.sign-in')} onPress={onSubmit} />
+        <Button title={t('auth.sign-in')} onPress={onSubmit} color="#315445" />
      
       <Text>
         <Pressable onPress={() => setModalResetOpen(true)}>

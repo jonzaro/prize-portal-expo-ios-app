@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 
 interface ProductProps {
+  id: number;
   title: string;
   description: string;
   price: number;
@@ -28,9 +29,9 @@ const Product = ({
     const textStyle = price < 100 ? styles.priceStrike : styles.price;
     
     return (
-        <View style={[styles.card, styles.shadowProp]}>   
+        // <View style={[styles.card, styles.shadowProp]}>   
 
-    <View style={styles.container}>
+    <View style={[styles.container, styles.shadowProp]}>
       <Image source={{ uri: image }} style={styles.image} />
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.brandCategory}>{brand} {category}</Text>
@@ -40,7 +41,7 @@ const Product = ({
       <Text style={styles.rating}>Rating: &#9733; {rating}  |  <FontAwesome5 name="shipping-fast" size={14} color="black" />   Free shipping</Text>
     </View>
 
-    </View>
+    // </View>
   );
 };
 
@@ -48,40 +49,22 @@ const Product = ({
 const styles = StyleSheet.create({
   container: {
     margin: 10,
-    width: "100%",
-
-    borderRadius: 10,
-    overflow: 'hidden',
+    left: "0%",
+    padding: 15,
+    width: "95%",
+    height: "100%",
+    flex: 1,
+    // overflow: 'hidden',
     backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  card: {
-    backgroundColor: 'white',
-    borderColor: "#b5b5b5",
     borderWidth: 1,
-    borderRadius: 8,
-    marginLeft: "5%",
-    // paddingVertical: 5,
-    paddingHorizontal: 15,
-    // marginBottom: -20,
-    width: '100%',
-    right: "5%",
-    // height: '30%',
-    // bottom: "7%",
-    marginVertical: 5,
+    borderRadius: 10,
+    borderColor: "#b5b5b5",
   },
   shadowProp: {
     shadowColor: '#171717',
     shadowOffset: {width: -2, height: 4},
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
+    shadowOpacity: .5,
+    shadowRadius: 5,
   },
   image: {
     width: '40%',
@@ -89,7 +72,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   title: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: 'bold',
     margin: 10,
   },
@@ -113,7 +96,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   brandCategory: {
-    fontSize: 14,
+    fontSize: 13,
     marginHorizontal: 10,
     marginBottom: 10,
   },
