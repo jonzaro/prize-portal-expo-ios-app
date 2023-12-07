@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 //Components
 import { Carousel } from '_components/Carousel/Carousel';
 import { useCountUpAnimation } from 'src/hooks/useCountUpAnimation';
+import { DiscountModal } from '../../DiscountModal'
 
 //Data
 import homeData from '_assets/data/home.json';
@@ -31,6 +32,7 @@ export default function Index() {
 
   const animatedTotal = useCountUpAnimation(user?.rewardsPoints, { duration: 800 })
 
+  // const [showDiscountModal, setShowDiscountModal] = useState(true);
 
 
 
@@ -169,7 +171,10 @@ export default function Index() {
       </TouchableOpacity>
 
       <StatusBar style="auto" />
+      <DiscountModal />
     </SafeAreaView>
+ 
+    
     </>
   );
 }

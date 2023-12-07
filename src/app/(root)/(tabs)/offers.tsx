@@ -67,7 +67,7 @@ export default function Feed() {
         </View>
       
         {promoData.map((item, index) => (
-          <TouchableOpacity onPress={() => handlePress(item)}>
+          <TouchableOpacity key={item.id} onPress={() => handlePress(item)}>
 
           <PromoCouponItem  key={item.id} promoCoupon ={item}/>
         </TouchableOpacity>

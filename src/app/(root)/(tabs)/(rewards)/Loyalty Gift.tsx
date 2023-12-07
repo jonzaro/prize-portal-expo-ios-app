@@ -50,11 +50,9 @@ export default function Feed() {
         </View>
         <ScrollView horizontal={false} style={{ width: '95%' }}>
           {cheapItems.map((item, index) => (
-            // ADD LOGIC THAT ONLY ALLOWS AN ALERT AND A REDIRECT, IF THE USER HAS NO GIFT YET
-            // DISABLE IF USER => hasGift = true
-            <TouchableOpacity onPress={() => handlePress(item)}>
+            <TouchableOpacity key={item.id} onPress={() => handlePress(item)}>
               <Product
-                key={index}
+                key={item.id}
                 title={item.title}
                 description={item.description}
                 price={item.price}

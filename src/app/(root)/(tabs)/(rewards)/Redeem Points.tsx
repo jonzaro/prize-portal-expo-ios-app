@@ -76,10 +76,10 @@ export default function RedeemPoints() {
 
         <ScrollView horizontal={false} style={styles.scrollView}>
       {expensiveItems.map((item, index) => (
-        <TouchableOpacity onPress={() => handlePress(item)}>
+        <TouchableOpacity key={item.id} onPress={() => handlePress(item)}>
 
         <Product
-            key={index}
+            key={item.id}
             title={item.title}
             description={item.description}
             price={item.price}
