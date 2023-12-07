@@ -43,7 +43,6 @@ export const useAuth = create<AuthState>((set, get) => ({
   login(credentials) {
     const user = get().users?.find((user) => user.email === credentials.email);
 
-
     if (!user) {
       return {
         error: 'auth.errors.user-does-not-exist',
@@ -72,12 +71,16 @@ export const useAuth = create<AuthState>((set, get) => ({
     set({
       users: [
         ...get().users,
-        { ...newUser, rewardsPoints: getRandomWholeNumber(), rewardsTier: 'gold' },
+        {
+          ...newUser,
+          rewardsPoints: getRandomWholeNumber(),
+          rewardsTier: 'gold',
+        },
       ],
     });
   },
   logout() {
-    set({ user: null });
+    set({ user: 0 });
   },
   resetPassword(email) {
     const user = get().users?.find((user) => user.email === email);
@@ -101,6 +104,4 @@ export const useAuth = create<AuthState>((set, get) => ({
 
     return newPasswd;
   },
-  
- 
 }));

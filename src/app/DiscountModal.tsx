@@ -36,14 +36,14 @@ const handleShowGift = () => {
             {showGift ? (
             <>
                 <View style={styles.giftCard} >
-                    <Image source={require('../assets/images/giftBox.gif')} style={{ width: 250, height: 250}} resizeMode="contain"/>
+                    <Image source={require('../assets/images/giftBox.gif')} style={{ width: 250, height: 250, }} resizeMode="contain"/>
                 </View>
-                <View style={styles.discountImg} >
+                {/* <View style={styles.discountImg} >
                     <Image source={require('../assets/images/percent.gif')} style={{ width: 80}} resizeMode="contain"/>
                     <Text style={styles.discountText}>
                         40
-                    </Text>
-                </View>
+                    </Text> */}
+                {/* </View> */}
                 <View style={styles.couponCode}>
                     <Text className="text-black text-xs ml-20">Claim your discount by using code</Text>
                     <Text className="text-teal-300 text-2xl ml-28">GETMY40</Text>
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         width: '105%',
         height: '65%',
-        top: "5%",
+        bottom: "20%",
         right: "70",
     },
     discountImg: {
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         borderColor: "black",
         borderStyle: "dashed",
         right: "10%",
-        bottom: "60%",
+        bottom: "0%",
         },
     pointer: {
         top: "66%",
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: '#7d7c7c',
     borderWidth: 2,
-    overflow:`hidden`,
+    // overflow:`hidden`,
     paddingVertical: 20,
     paddingHorizontal: 45,
     marginVertical: 10,
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
   closeModalIcon: {
     width: '13%',
     height: '13%',
-    bottom: "167%",
+    bottom: "95%",
     left: "105%",
   },
 });
