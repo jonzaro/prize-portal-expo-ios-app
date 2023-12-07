@@ -45,8 +45,8 @@ const handleShowGift = () => {
                     </Text>
                 </View>
                 <View style={styles.couponCode}>
-                    <Text className="text-black text-xs ml-14">Claim your discount by using code</Text>
-                    <Text className="text-teal-300 text-2xl ml-24">GETMY40</Text>
+                    <Text className="text-black text-xs ml-20">Claim your discount by using code</Text>
+                    <Text className="text-teal-300 text-2xl ml-28">GETMY40</Text>
                 </View>
                 <View style={styles.closeModalIcon}>
                     <TouchableOpacity onPress={handleCloseModal}>
@@ -57,9 +57,9 @@ const handleShowGift = () => {
                 ): 
                 <>
                     <Image source={require('../assets/images/AIPresents.jpeg')} style={{ width: "140%", height: "100%", position: "absolute"}} />
-                        <Image source={require('../assets/images/newUserBanner.png')} style={{ width: 375, height: 40 , top: "79%", right: "20%"}} />
                         <TouchableOpacity onPress={() => {handleShowGift()}}>
-                            <Image source={require('../assets/images/discount.jpeg')} style={{ width: 375, height: 50 , top: "490%", right: "20%" }}  />
+                        <Image source={require('../assets/images/newUserBanner.png')} style={{ width: 450, height: 35 , top: "300%", right: "20%"}} />
+                            <Image source={require('../assets/images/discount.jpeg')} style={{ width: 450, height: 50 , top: "300%", right: "20%" }}  />
                         </TouchableOpacity>
                         <View style={styles.pointer}><FontAwesome5 name="hand-point-right" size={20} color="white" /></View>
 
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         width: '105%',
         height: '65%',
         top: "5%",
-        right: "7%",
+        right: "70",
     },
     discountImg: {
         paddingVertical: 20,
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
         bottom: "60%",
         },
     pointer: {
-        top: "64%",
-        left: "1%",
+        top: "66%",
+        left: "4%",
         },
     discountBanner: {
         // background: "transparent",
@@ -139,14 +139,15 @@ const styles = StyleSheet.create({
   },
   innerCard: {
     backgroundColor: 'white',
-    borderColor: '#315445',
+    borderColor: '#7d7c7c',
     borderWidth: 2,
     overflow:`hidden`,
     paddingVertical: 20,
     paddingHorizontal: 45,
     marginVertical: 10,
-    width: '100%',
+    width: '115%',
     height: '90%',
+    right: "7%",
     borderRadius: 8,
   },
 
