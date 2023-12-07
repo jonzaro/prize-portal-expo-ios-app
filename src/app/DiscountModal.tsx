@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { View, Button, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
+import { FontAwesome5 } from '@expo/vector-icons';
+
 
 export const DiscountModal = () => {
 
@@ -14,7 +16,7 @@ const discountRef = useRef(null);
 
 useEffect(() => {
     // Trigger the animation when the component mounts
-    viewRef.current.fadeIn(2000)
+    viewRef.current.fadeIn(3000)
 }, []);
 
 
@@ -41,22 +43,25 @@ const handleShowGift = () => {
                     <Text style={styles.discountText}>
                         40
                     </Text>
-                    </View>
+                </View>
+                <View style={styles.couponCode}>
+                    <Text className="text-black text-xs ml-14">Claim your discount by using code</Text>
+                    <Text className="text-teal-300 text-2xl ml-24">GETMY40</Text>
+                </View>
                 <View style={styles.closeModalIcon}>
                     <TouchableOpacity onPress={handleCloseModal}>
-                        <AntDesign name="closecircleo" size={28} color="black" />
+                        <AntDesign name="closecircleo" size={22} color="black" />
                     </TouchableOpacity>
                 </View>
               </>  
                 ): 
                 <>
-                    <View style={styles.discountBanner}>
-                        <Image source={require('../assets/images/newUserBanner.png')} style={{ width: 275, height: 150, bottom: "15%"}} resizeMode="contain"/>
-
+                    <Image source={require('../assets/images/AIPresents.jpeg')} style={{ width: "140%", height: "100%", position: "absolute"}} />
+                        <Image source={require('../assets/images/newUserBanner.png')} style={{ width: 375, height: 40 , top: "79%", right: "20%"}} />
                         <TouchableOpacity onPress={() => {handleShowGift()}}>
-                            <Image source={require('../assets/images/discount.png')} style={{ width: 275, height: 150 }} />
+                            <Image source={require('../assets/images/discount.jpeg')} style={{ width: 375, height: 50 , top: "490%", right: "20%" }}  />
                         </TouchableOpacity>
-                    </View> 
+                        <View style={styles.pointer}><FontAwesome5 name="hand-point-right" size={20} color="white" /></View>
 
                 </>
                 }   
@@ -71,50 +76,59 @@ const styles = StyleSheet.create({
     giftCard: {
         // background: "transparent",
         backgroundColor: 'white',
-
         paddingVertical: 20,
         marginVertical: 10,
         width: '105%',
         height: '65%',
-        top: "25%",
-        right: "9%",
-      },
+        top: "5%",
+        right: "7%",
+    },
     discountImg: {
         paddingVertical: 20,
         marginVertical: 10,
         width: '75%',
-        height: '105%',
-        top: '-105%',
-        left: "15%",
-      },
-      discountText: {
+        height: '65%',
+        bottom: '135%',
+        left: "22%",
+        },
+    discountText: {
         fontSize: 35,
         color: '#62d2a2',
         textAlign: 'center',
-        bottom: "59%",
-
-
-      },
-      discountBanner: {
+        bottom: "135%",       
+        },
+    couponCode: {
+        width: "120%",
+        height: "21%",
+        padding: 10,
+        borderWidth: 2,
+        borderColor: "black",
+        borderStyle: "dashed",
+        right: "10%",
+        bottom: "60%",
+        },
+    pointer: {
+        top: "64%",
+        left: "1%",
+        },
+    discountBanner: {
         // background: "transparent",
         backgroundColor: 'white',
         borderRadius: 4,
-        padding: 10,
         width: '115%',
-        height: '90%',
-        top: '13%',
+        height: '30%',
+        top: '23%',
         left: "-6%",
       },
   card: {
     // background: "transparent",
     // backgroundColor: 'white',
-  
     paddingVertical: 20,
     paddingHorizontal: 45,
     marginVertical: 10,
     width: '105%',
     height: '75%',
-    bottom: '49%',
+    bottom: '69%',
   },
 
   shadowProp: {
@@ -127,18 +141,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: '#315445',
     borderWidth: 2,
+    overflow:`hidden`,
     paddingVertical: 20,
     paddingHorizontal: 45,
     marginVertical: 10,
     width: '100%',
-    height: '110%',
+    height: '90%',
     borderRadius: 8,
   },
 
   closeModalIcon: {
     width: '13%',
     height: '13%',
-    bottom: "180%",
-    left: "100%",
+    bottom: "167%",
+    left: "105%",
   },
 });

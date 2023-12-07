@@ -24,6 +24,10 @@ import { useAuth } from 'src/store/authStore/auth.store';
 export default function Index() {
 
 
+  const [showDiscountModal, setShowDiscountModal] = useState<boolean>(false);
+  const [receivedDiscount, setReceivedDiscount] = useState<boolean>(false);
+
+
   const { t } = useTranslation();
   const { colorScheme } = useColorScheme();
 
@@ -35,7 +39,10 @@ export default function Index() {
   // const [showDiscountModal, setShowDiscountModal] = useState(true);
 
 
-
+const handleDiscountModal = () => {
+  setShowDiscountModal(true)
+  setReceivedDiscount(true)
+}
 
 
 
@@ -171,10 +178,17 @@ export default function Index() {
       </TouchableOpacity>
 
       <StatusBar style="auto" />
-      <DiscountModal />
+      { !receivedDiscount &&
+      <TouchableOpacity onPress={() => handleDiscountModal() }>
+        <Image 
+            source={require('../../../assets/images/giftBoxClosed.gif')}
+            style={{height:100, width:100, bottom: "470%", left: 140,}}
+            resizeMode="contain" // Adjust the resizeMode as needed
+            />     
+            </TouchableOpacity>
+      }
+            {showDiscountModal && <DiscountModal />}
     </SafeAreaView>
- 
-    
     </>
   );
 }
