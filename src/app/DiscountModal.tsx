@@ -10,37 +10,37 @@ const [showGift, setShowGift] = useState<boolean>(false);
 
 const viewRef = useRef(null);
 
-const giftRef = useRef(null);
+const discountRef = useRef(null);
 
 useEffect(() => {
     // Trigger the animation when the component mounts
-    viewRef.current.fadeIn(2000); // You can adjust the duration as needed
+    viewRef.current.fadeIn(2000)
 }, []);
+
+
 
   const handleCloseModal = () => {
     setShowDiscountModal(false);
   };
 
-  const handleShowGift = () => {
-      setShowGift(true);
+const handleShowGift = () => {
+    setShowGift(true);
 }
-
-// const handleShowDiscount = () => {
-// }
-
 
   return showDiscountModal ? (
     <>
-    <Animatable.View style={[styles.card, styles.shadowProp]} ref={viewRef}>
+    <Animatable.View style={[styles.card, styles.shadowProp]} ref={viewRef} delay={5000}>
         <View style={styles.innerCard}>
             {showGift ? (
             <>
-                <View style={styles.giftCard} ref={giftRef} >
+                <View style={styles.giftCard} >
                     <Image source={require('../assets/images/giftBox.gif')} style={{ width: 250, height: 250}} resizeMode="contain"/>
                 </View>
-                <View style={styles.discountImg} ref={giftRef} >
-
-                    <Image source={require('../assets/images/50off.png')} style={{ width: 160, height: 150}} resizeMode="contain"/>
+                <View style={styles.discountImg} >
+                    <Image source={require('../assets/images/percent.gif')} style={{ width: 80}} resizeMode="contain"/>
+                    <Text style={styles.discountText}>
+                        40
+                    </Text>
                     </View>
                 <View style={styles.closeModalIcon}>
                     <TouchableOpacity onPress={handleCloseModal}>
@@ -84,8 +84,16 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         width: '75%',
         height: '105%',
-        top: '-75%',
-        left: "19%",
+        top: '-105%',
+        left: "15%",
+      },
+      discountText: {
+        fontSize: 35,
+        color: '#62d2a2',
+        textAlign: 'center',
+        bottom: "59%",
+
+
       },
       discountBanner: {
         // background: "transparent",
