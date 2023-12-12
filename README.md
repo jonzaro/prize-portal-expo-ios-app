@@ -14,6 +14,8 @@
 - [OneSignal](https://onesignal.com/) - Push Notification delivery
 - [Lottie](https://lottiefiles.com/) - Animated Splash Screen
 
+("./assets/images/PrizePortal.jpeg"))
+
 ## Installation
 
 1. Clone the new repository.
