@@ -14,7 +14,7 @@
 - [OneSignal](https://onesignal.com/) - Push Notification delivery
 - [Lottie](https://lottiefiles.com/) - Animated Splash Screen
 
-![Alt text](https://file%252B.vscode-resource.vscode-cdn.net/Users/junsaro/Code/Career/MyProjects/expo-router-starter-kit/src/assets/images/PrizePortal.jpeg?version%253D1702361946782)
+(./assets/images/PrizePortal.jpeg)
 
 ## Installation
 
