@@ -14,7 +14,7 @@
 - [OneSignal](https://onesignal.com/) - Push Notification delivery
 - [Lottie](https://lottiefiles.com/) - Animated Splash Screen
 
-<img src="./src/assets/images/PrizePortal.jpeg" width="30%" />
+<img src="./src/assets/images/PrizePortal.jpeg" width="50%" />
 
 ## Installation
 
