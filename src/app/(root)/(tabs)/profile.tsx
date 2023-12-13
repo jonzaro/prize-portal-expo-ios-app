@@ -52,6 +52,7 @@ export default function Feed() {
   return (
     <>
       <SafeAreaView style={styles.bg}>
+        {/* <View style={{flex:1}}> */}
         <Image
           source={require('../../../assets/images/profile.png')}
           style={{
@@ -76,7 +77,9 @@ export default function Feed() {
             promo deals, and points redemption items here.
           </Text>
         </View>
-        
+
+        {/* </View> */}
+
         <Modal visible={pointsItemModalVisible} animationType="slide" transparent>
           <TouchableOpacity onPress={() => setPointsItemModalVisible(false)}>
           <View style={styles.modal}>
@@ -147,7 +150,7 @@ export default function Feed() {
             )}
           </View>
 
-          <View style={[styles.card, styles.shadowProp]}>
+          <View style={[styles.card2, styles.shadowProp]}>
             {pointsRedemptionItem ? (
               <>
                 <TouchableOpacity onPress={() => setPointsItemModalVisible(true)}>
@@ -192,9 +195,9 @@ export default function Feed() {
                   brand={loyaltyGift.brand}
                   image={loyaltyGift.image}
                   category={loyaltyGift.category} id={loyaltyGift.id}       />
-              <View style={{width: "90%", height: "35%", left: 18, backgroundColor: "#64b093", borderRadius: 10, bottom: "43%", flexGrow:1, padding: 15}}>
-                <Text style={{color: "white", fontWeight: "bold", top: 15, left: "8%"}}>Your thank you gift is on the way!</Text>
-              <Text style={{marginTop: 30, left: "8%", color: "white", fontWeight: "bold"}}>
+              <View style={{width: "90%", height: "15%", left: 18, backgroundColor: "#64b093", borderRadius: 10, bottom: "25%", flexGrow:1, padding: 15}}>
+                <Text style={{color: "white", fontWeight: "bold", top: 5, left: "8%"}}>Your thank you gift is on the way!</Text>
+              <Text style={{marginTop: 10, left: "8%", color: "white", fontWeight: "bold"}}>
               <FontAwesome5 name="plane" size={24} color="white" /> ----------- 
               <FontAwesome5 name="shipping-fast" size={24} color="white" /> -----------
               <Entypo name="home" size={24} color="white" />
@@ -221,6 +224,7 @@ export default function Feed() {
 const styles = StyleSheet.create({
   bg: {
     backgroundColor: '#62d2a2',
+    flexGrow: 1,
   },
   modal: {
     height: "100%", 
@@ -251,7 +255,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: '#b5b5b5',
     borderWidth: 1,
-    flex: 1,
+    // flex: 1,
+    borderRadius: 8,
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    width: '90%',
+    marginVertical: 5,
+  }, 
+  card2: {
+    backgroundColor: 'white',
+    borderColor: '#b5b5b5',
+    borderWidth: 1,
+    // flex: 1,
     borderRadius: 8,
     paddingVertical: 20,
     paddingHorizontal: 20,
@@ -267,7 +282,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     // flexGrow: 1,
     width: '90%',
-    height: "37%",
+    // height: "37%",
     marginVertical: 5,
   },
   card4: {

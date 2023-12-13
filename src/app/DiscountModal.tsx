@@ -36,7 +36,7 @@ const handleShowGift = () => {
             {showGift ? (
             <>
                 <View style={styles.giftCard} >
-                    <Image source={require('../assets/images/giftBox.gif')} style={{ width: 250, height: 250, }} resizeMode="contain"/>
+                    <Image source={require('../assets/images/giftBox.gif')} style={{ width: 230, height: 220, }} resizeMode="contain"/>
                 </View>
                 {/* <View style={styles.discountImg} >
                     <Image source={require('../assets/images/percent.gif')} style={{ width: 80}} resizeMode="contain"/>
@@ -56,12 +56,11 @@ const handleShowGift = () => {
               </>  
                 ): 
                 <>
-                    <Image source={require('../assets/images/AIPresents.jpeg')} style={{ width: "140%", height: "100%", position: "absolute"}} />
+                    <Image source={require('../assets/images/AIPresents.jpeg')} style={{ width: "130%", height: "120%", position: "absolute"}} />
                         <TouchableOpacity onPress={() => {handleShowGift()}}>
-                        <Image source={require('../assets/images/newUserBanner.png')} style={{ width: 450, height: 35 , top: "300%", right: "20%"}} />
-                            <Image source={require('../assets/images/discount.jpeg')} style={{ width: 450, height: 50 , top: "300%", right: "20%" }}  />
-                        </TouchableOpacity>
+                        <Image source={require('../assets/images/banner.png')} style={{ width: 450, height: 105 , top: "200%", right: "20%"}} />
                         <View style={styles.pointer}><FontAwesome5 name="hand-point-right" size={20} color="white" /></View>
+                        </TouchableOpacity>
 
                 </>
                 }   
@@ -74,15 +73,11 @@ const handleShowGift = () => {
 
 const styles = StyleSheet.create({
     giftCard: {
-        // background: "transparent",
-        backgroundColor: 'white',
-        paddingVertical: 20,
-        marginVertical: 10,
         width: '105%',
-        height: '65%',
-        bottom: "20%",
-        right: "70",
-    },
+        height: '60%',
+        bottom: 19,
+        left: 10,
+      },
     discountImg: {
         paddingVertical: 20,
         marginVertical: 10,
@@ -108,8 +103,8 @@ const styles = StyleSheet.create({
         bottom: "0%",
         },
     pointer: {
-        top: "66%",
-        left: "4%",
+        top: "162%",
+        left: "24%",
         },
     discountBanner: {
         // background: "transparent",
@@ -141,11 +136,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: '#7d7c7c',
     borderWidth: 2,
-    // overflow:`hidden`,
+    overflow:`hidden`,
     paddingVertical: 20,
     paddingHorizontal: 45,
     marginVertical: 10,
-    width: '115%',
+    width: '114%',
     height: '90%',
     right: "7%",
     borderRadius: 8,
@@ -154,7 +149,7 @@ const styles = StyleSheet.create({
   closeModalIcon: {
     width: '13%',
     height: '13%',
-    bottom: "95%",
-    left: "105%",
+    bottom: "82%",
+    left: "100%",
   },
 });

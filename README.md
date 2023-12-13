@@ -35,7 +35,7 @@ yarn ios | yarn start  -> i (for ios)
 
 1. Create a .env file in the root of the project.
 2. Define env variables inside the .env file
-3. Use env variables everywhere by import env-loader
+3. Use env variqables everywhere by import env-loader
 
 `import ENV from '_utils/env-loader';`
 
